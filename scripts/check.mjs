@@ -9,8 +9,8 @@ const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
 assert.equal(new Set(ids).size, ids.length, 'Duplicate HTML IDs');
 assert.equal((html.match(/<h1\b/g) || []).length, 1, 'One main heading required');
 for (const m of html.matchAll(/href="#([^"]+)"/g)) assert(ids.includes(m[1]), `Missing anchor ${m[1]}`);
-for (const m of html.matchAll(/(?:src|href)="(\/[^"#?]+)"/g)) {
-  const path = m[1];
+for (const m of html.matchAll(/(?:src|href)="(\/[^"#]+)"/g)) {
+  const path = m[1].split('?')[0];
   if (path === '/') continue;
   await stat(resolve(root, 'dist', path.slice(1)));
 }

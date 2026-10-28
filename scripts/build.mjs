@@ -1,10 +1,12 @@
 import { readFile, writeFile, mkdir, cp, rm } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
+import { createHash } from 'node:crypto';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const config = JSON.parse(await readFile(resolve(root, 'content/site.json'), 'utf8'));
 const { site, links, installation, devices, controller, concepts, games, affiliate, community } = config;
+const cssVersion = createHash('sha256').update(await readFile(resolve(root, 'style.css'))).digest('hex').slice(0, 12);
 const esc = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 const arrow = '<span aria-hidden="true">↗</span>';
 const link = (url, label, cls = '', extra = '') => `<a href="${esc(url)}" class="${cls}" ${extra}>${label}</a>`;
@@ -29,7 +31,7 @@ const page = `<!doctype html>
 <meta property="og:image" content="${site.origin}/assets/illustrations/${site.hero.socialImage}"><meta property="og:image:alt" content="Illustrative M5Stick mockups showing Galaga and Flappy Bird.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="/assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/style.css?v=${cssVersion}">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
