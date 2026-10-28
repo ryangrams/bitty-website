@@ -40,7 +40,7 @@
     "status": "USB loader preview",
     "note": "The loader is public. Firmware downloads and flashing are disabled while USB loading and recovery are verified.",
     "checked": "2026-10-28",
-    "release": "preview-46389a4c",
+    "release": "preview-c65bf5c6",
     "releaseAvailable": false,
     "steps": [
       {

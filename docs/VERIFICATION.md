@@ -76,3 +76,10 @@ The live browser displayed seven game entries and three Load Bitty links, all po
 Following Load Bitty from the published website reached the actual GitHub Pages interface. Its **Hardware verification pending** button was disabled. Installation remains unverified. The new source clocks and authoring documentation do not change that status. The live website remains open as the task’s browser deliverable.
 
 Screenshots and HTTP evidence are in ignored `artifacts/`, including `bitty-published-v3-mobile.png`, `bitty-published-v3-desktop.png`, `published-v3.html` and `link-audit.json`. The static build is approximately 709 KiB including the social image and license files. Browser layout overrides were reset after checks.
+
+
+### Final firmware CI receipt
+
+The firmware task published `c65bf5c68b919bed214397d979e079eb1ea959d6`. GitHub reports both [Source checks](https://github.com/ryangrams/bitty/actions/runs/40719809391) and [public installer preview](https://github.com/ryangrams/bitty/actions/runs/40719809365) completed successfully at that exact commit. The task reports passing Mac and Linux GCC sanitizer checks and compiling original Plus private/public and StickS3 public images. The update remains unflashed while Ryan is away.
+
+The actual public `release.json` now reports `available: false` and `version: preview-c65bf5c6`. The central configuration records that version while keeping installation unverified. The live page’s source-implemented clock and pending-device labels remain accurate. This metadata and documentation update produces identical public HTML, so no website redeployment is needed.
