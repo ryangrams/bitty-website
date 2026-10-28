@@ -98,3 +98,11 @@ Suggested supporting copy:
 > You can send one-time support through GitHub Sponsors. It helps me keep building Bitty.
 
 [GitHub's official Sponsors documentation](https://docs.github.com/en/sponsors/receiving-sponsorships-through-github-sponsors/about-github-sponsors-for-open-source-contributors) confirms support for one-time and monthly sponsorship tiers. No separate Buy Me a Coffee account is needed. Downloads, contributions, and community participation stay available independently of sponsorship or GitHub stars.
+
+## Device budget wording
+
+Ryan requested positioning around a $30 to $40 device. The site presents that as his hardware-budget target, with the optional controller sold separately. It is not a live retail quote. Prices vary by model, retailer and shipping.
+
+On October 28, 2026, manufacturer base listings showed original Plus $19.95, Plus SE $19.00 and StickS3 $21.50. A public Amazon StickS3 listing showed $31.90. These amounts are research context and are deliberately omitted from the live product cards. Recheck current prices before publishing a retail-price claim.
+
+Primary sources: [original Plus](https://shop.m5stack.com/products/m5stickc-plus-esp32-pico-mini-iot-development-kit), [Plus SE](https://shop.m5stack.com/products/m5stickc-plus-se-mini-iot-dev-kit-esp32-pico), [StickS3](https://shop.m5stack.com/products/m5sticks3-esp32s3-mini-iot-dev-kit), [Amazon StickS3](https://www.amazon.com/dp/B0GWHN8HK3).

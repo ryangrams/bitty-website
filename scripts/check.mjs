@@ -28,7 +28,7 @@ if (config.installation.verified) {
   assert(config.installation.url && /^https:\/\//.test(config.installation.url));
   assert(config.installation.verifiedAt && config.installation.release, 'Installer needs dated release evidence');
 } else {
-  assert(html.includes('No public installer is available yet.'));
+  assert(html.includes('Installation is not available yet.'));
 }
 for (const item of [...config.devices, config.controller]) {
   if (item.purchaseUrl && item.affiliateVerified && config.affiliate.siteApproved) {

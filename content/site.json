@@ -4,7 +4,22 @@
     "origin": "https://bitty.games",
     "description": "Tiny games and apps on small hardware. A growing side project by Ryan Grams, born from a questionable summer-camp idea.",
     "checked": "2026-10-28",
-    "story": "I wanted to build a game device small enough for my kids to sneak into summer camp. We definitely got caught. The project kept growing anyway."
+    "story": "I wanted to build a game device small enough for my kids to sneak into summer camp. We definitely got caught. The project kept growing anyway.",
+    "intro": "Bitty grew into a home for some of our favorite games, ported to hardware that fits in your palm.",
+    "approachHeading": "Built around tilt and a few buttons.",
+    "approachText": "Porting a favorite to a screen this small means rethinking how it plays. I wanted tilting the device and tapping its few buttons to feel fun on their own.",
+    "budget": {
+      "amount": "$30 to $40",
+      "note": "The device budget I had in mind. Prices vary by model and retailer. The optional controller is sold separately."
+    },
+    "hero": {
+      "image": "bitty-games-mockup-v2.webp",
+      "socialImage": "bitty-games-mockup-v2.jpg",
+      "alt": "Two translucent orange M5Stick devices matching the supplied Plus SE reference, with illustrative Galaga and Flappy Bird screens.",
+      "caption": "Galaga + Flappy Bird",
+      "label": "Illustrative screen mockups",
+      "note": "Illustrative game screens. Public starter artwork differs. The mockups use a Plus SE shell. The original Plus is tested; SE support remains unverified."
+    }
   },
   "links": {
     "firmware": "https://github.com/ryangrams/bitty",
@@ -20,8 +35,9 @@
   "installation": {
     "verified": false,
     "url": null,
-    "status": "Public installer in progress",
-    "note": "The firmware and USB installer are still being prepared for GitHub. A public installation release is not available yet. Check the project before plugging anything in."
+    "status": "Installer preview only",
+    "note": "The source and installer preview are public on GitHub. Installation and firmware downloads are disabled while the first physical USB load is checked.",
+    "previewUrl": "https://ryangrams.github.io/bitty/"
   },
   "community": {
     "inviteVerified": true,
@@ -58,9 +74,9 @@
       "id": "s3",
       "name": "M5StickS3",
       "model": "Separate hardware · ESP32-S3",
-      "status": "Support unverified",
+      "status": "Build compiles",
       "state": "planned",
-      "description": "Another candidate for a future device port. It needs its own firmware and testing. There’s no Bitty release for it yet.",
+      "description": "A separate StickS3 build now compiles. Controls, audio, Bluetooth and sleep still need checks on real hardware. Physical compatibility remains unverified.",
       "source": "https://docs.m5stack.com/en/core/StickS3",
       "purchaseUrl": "https://geni.us/SUm5sticks3",
       "affiliateVerified": true,
@@ -74,18 +90,25 @@
     "purchaseUrl": "https://geni.us/SUiinegamebrick",
     "affiliateVerified": true,
     "source": "https://www.amazon.com/dp/B0FLK6TP38",
-    "asin": "B0FLK6TP38"
+    "asin": "B0FLK6TP38",
+    "headline": "Itty bitty. IINE Mini.",
+    "story": "I wanted to play some of these with a physical controller, too. It still had to be itty bitty, so I went with the IINE Mini."
   },
   "games": [
     {
-      "name": "Arcade experiments",
-      "status": "In development",
-      "description": "Flying through gaps, breaking bricks, dodging shots and strapping on a jetpack. These are local firmware builds. Controls, sound and hardware testing are still moving."
+      "name": "Galaga",
+      "status": "Ported · play-testing pending",
+      "description": "Our Galaga adaptation uses original code and graphics. Tilt left or right to move, then tap or hold the front M5 button to fire. Controller directions and A/B are implemented. Physical play-testing for this game is still pending."
     },
     {
-      "name": "Your own game files",
-      "status": "In development",
-      "description": "Cartridge and game-file adapters are being worked on separately. Compatibility varies by file and build. Bring files you’re entitled to use and adapt."
+      "name": "Flappy Bird",
+      "status": "Ported · release pending",
+      "description": "Tap the front M5 button to flap, start or try again. Controller A does the same, and B opens the menu. This one uses a button, with no tilt input. The public source includes original starter art."
+    },
+    {
+      "name": "More favorites + file adapters",
+      "status": "Ports + experiments",
+      "description": "We’ve also been working on block-stacking games, NES cartridge adapters and more arcade favorites. Compatibility varies by file and build. Bring files you’re entitled to use and adapt."
     },
     {
       "name": "Two-device play",

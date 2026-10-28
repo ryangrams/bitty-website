@@ -1,6 +1,16 @@
 # Asset provenance
 
-## Hero
+## Current hero
+
+The current hero is `assets/illustrations/bitty-games-mockup-v2.png`, generated with the built-in imagegen tool on 2026-10-28. Its hardware reference is the user-supplied StickC-Plus SE product photograph. The image preserves the short, wide device body, translucent orange housing, broad M5 button and USB port. One screen illustrates Galaga and the other illustrates Flappy Bird. Both screens are mockups. They are not device captures, and the public starter Flappy artwork differs. No private firmware screenshot or commercial game file was copied into the site.
+
+The site visibly separates the reference SE shell from the hardware-tested original Plus. It does not claim SE firmware support. The published versions are `bitty-games-mockup-v2.webp` (cwebp quality 82) and `bitty-games-mockup-v2.jpg` (JPEG quality 82). The PNG remains an editable source reference outside the deployed assets.
+
+The final prompt was:
+
+> Use case: product-mockup. Edit the supplied M5StickC Plus SE product photograph into an accurate two-device website hero mockup. Input image is the exact physical hardware reference and must control every proportion. TWO units of that SAME SHORT WIDE device, side by side on a matte charcoal #101116 desk under restrained violet edge light and warm amber key light. Landscape 3:2 image. Both units fully visible, each occupies about two-thirds of image height, screens face the camera clearly at a slight three-quarter angle. Preserve faithfully the reference's short 48 mm x 24 mm rectangular body (2:1 length-to-width), chunky rounded corners, translucent orange shell, visible inner PCB/screw posts, screen to housing ratio, black bezel, LARGE WIDE translucent front M5 button below screen, left-edge side buttons, and metal USB-C port at bottom edge. Keep the broad rectangular front button's embossed M5 mark. No long remote-control shapes. No wrist straps, invented controls, analogue sticks, cables or extra hardware. LEFT UNIT screen: an illustrative GALAGA game scene on BLACK, a small white/red player spaceship low center and several tidy rows of colorful tiny pixel enemy ships in upper half, a few small stars and shots, original small pixel rendering. RIGHT UNIT screen: an illustrative FLAPPY BIRD game scene with a small yellow bird, green pipes, cyan sky, distant small city silhouettes, tan ground strip. Screens should look like low resolution 135 x 240 displays, vivid and readable. Change screen contents only from the reference, remove all original screen words StickC Plus SE and arrows. Make device body geometry the priority. This is a generated illustrative mockup for game ports, not an actual firmware screenshot or proof of support for the SE. No text anywhere outside the two physical M5 button marks. Background clean dark studio, no logos, no human hands, no long orange bar.
+
+## Superseded first hero
 
 `assets/illustrations/bitty-concept-original.png` was generated with the built-in imagegen tool on 2026-10-28. It is an original illustration of an imagined orange pocket device, labeled as a concept on the site. It does not claim to be a photograph or an accurate hardware diagram.
 
@@ -16,7 +26,7 @@ The prompt was:
 
 Device and controller diagrams in `scripts/build.mjs` are original simplified illustrations. They are decorative and are not product photographs or dimensioned technical drawings.
 
-No Amazon product photography, commercial game screenshots, characters, artwork or music has been copied into this repository. Manufacturer photos were considered, but no redistribution license was verified.
+The user’s product photograph was used as a generation reference. The reference photograph itself was not copied into the public repository. No private game screenshot, ROM, APK, extracted commercial game artwork or music has been copied into the repository. The generated hero illustrates the two named games as requested, and its visible mockup label distinguishes it from captured gameplay.
 
 ## Fonts
 

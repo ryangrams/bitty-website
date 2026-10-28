@@ -53,13 +53,13 @@ Cloudflare keeps deployed Worker versions. Use its dashboard or `npx wrangler@4.
 
 ## Installation handoff
 
-The initial audit found no published firmware or installer. `installation.verified` is deliberately `false`, and “Load your device” links to the firmware project with a visible status notice.
+The source and GitHub Pages installer preview are public. The preview reports `available: false`, with installation and firmware downloads disabled pending a physical USB check. `installation.verified` stays `false`. “Load your device” links to the firmware project, and a separate link opens the clearly labeled installer preview.
 
 After the separate firmware work is published, follow [the activation criteria](docs/VERIFICATION.md). Verify the actual public installer, its device list, release manifest and firmware assets. Then set its exact URL, `verified: true`, `verifiedAt` and `release` in `content/site.json`, update the surrounding status text, and redeploy. A successful website deployment does not establish that the installer works.
 
 ## Hardware and paid links
 
-The original M5StickC Plus is the tested device. SE, Plus2, original StickC and S3 devices have separate hardware and need their own verified builds. The SE has no onboard IMU. The IINE Gamebrick Mini is tested in H mode only. Status changes need evidence from the firmware project.
+The original M5StickC Plus is the tested device. SE, Plus2, original StickC and S3 devices have separate hardware and need their own verified builds. A separate StickS3 build now compiles, with physical checks still pending. The SE has no onboard IMU. The IINE Gamebrick Mini is tested in H mode only. Status changes need evidence from the firmware project.
 
 Purchase buttons require a verified Geniuslink destination and an approved affiliate site setting in `content/site.json`. Put “Paid link” beside each enabled purchase button. Preserve the disclosure beside the hardware section:
 
@@ -77,7 +77,7 @@ Never invite visitors to upload commercial game files. Users need legitimate cop
 
 ## Assets and privacy
 
-Original concept artwork is included in `assets/illustrations`. The hero is a generated concept illustration, and both game scenes are original SVG concept art. They are labeled as mockups on the public site. They do not document implemented games or a photographed device. Replace them with approved real photography when available. Keep image dimensions, alternative text and honest labels.
+Original concept artwork is included in `assets/illustrations`. The revised hero uses the user’s Plus SE photo as a hardware reference and shows generated Galaga and Flappy Bird screen mockups. It is labeled as illustrative, with the reference shell separated from tested firmware compatibility. The two proposed game scenes are original SVG concept art. None of these images are photographs of a running firmware build. Replace them with approved real photography when available. Keep image dimensions, alternative text and honest labels.
 
 The original hero PNG is retained as a source asset. The build publishes a compressed WebP and JPEG for the page and social previews. Self-hosted Archivo, Inter Tight and JetBrains Mono have their OFL license files beside them. See [asset provenance](docs/ASSETS.md).
 

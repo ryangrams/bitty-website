@@ -44,9 +44,9 @@ The available Amazon browser session is not connected to the existing Associates
 
 ### Separate firmware release
 
-The public firmware repository was empty during verification, and its GitHub Pages installation URL returned 404. “Load your device” therefore opens the verified GitHub project with a visible installer-in-progress notice. The installation handoff remains incomplete.
+The firmware source is now public at commit `f83f0cda458d3b0ab730b52d53191a932a4079e8`. Its GitHub Pages interface preview returns 200, while `release.json` reports `available: false` and `manifest.json` returns 404. No GitHub release is available. “Load your device” opens the GitHub project, and a secondary link opens the installer preview. Installation and firmware downloads remain disabled. The installation handoff is incomplete.
 
-Once the separate firmware task publishes the installer and device-specific release, follow [VERIFICATION.md](VERIFICATION.md). Check the actual public page, its device list, manifests and binary URLs before enabling the verified installation destination in `content/site.json`. Website publication does not establish a working USB installer.
+Once the separate firmware task publishes an installable device-specific release, follow [VERIFICATION.md](VERIFICATION.md). Check the actual public page, its device list, manifests and binary URLs before enabling the verified installation destination in `content/site.json`. Website publication does not establish a working USB installer.
 
 GitHub Sponsors is already active with one-time support. The Discord invite and destination channels are verified. Neither requires owner activation for this website.
 
