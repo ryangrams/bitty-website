@@ -1,5 +1,13 @@
 # Asset provenance
 
+## Hockey Queen artwork
+
+`assets/illustrations/hockey-queen.webp` is a lossless copy of Ryan's original Hockey Queen title artwork from `~/SUDev/hockey-queen/hockey-queen-v1/assets/final/title-v2.png`. Ryan authorized using his existing art for this website. The source project's `docs/ART_INTAKE.md` and `docs/ART_SPEC.md` document its generation and native-pixel preparation. The finished art is also present in the Godot screen-asset library. This image is artwork, not a screenshot of a running Bitty port.
+
+The published image keeps its original 192 by 288 pixels and all 29 colors. It is 13,862 bytes, encoded with `cwebp -lossless -exact -z 9`. The decoded RGBA pixels match the source exactly. No crop, resize, redraw or color change was made, and the source project was left unchanged. Use pixel-preserving display scaling and label the Bitty port as in development.
+
+Source SHA-256: `b7f94b6ee1b5b151b77ae8d10aa1cd3659d77d181f59974aa983392aac6b88be`.
+
 ## Current hero
 
 The current hero is `assets/illustrations/bitty-games-mockup-v2.png`, generated with the built-in imagegen tool on 2026-10-28. Its hardware reference is the user-supplied StickC-Plus SE product photograph. The image preserves the short, wide device body, translucent orange housing, broad M5 button and USB port. One screen illustrates Galaga and the other illustrates Flappy Bird. Both screens are mockups. They are not device captures, and the public starter Flappy artwork differs. No private firmware screenshot or commercial game file was copied into the site.
@@ -22,7 +30,7 @@ The prompt was:
 
 ## Game scenes and diagrams
 
-`lights-out.svg` and `patch-panic.svg` are original pixel-grid illustrations authored for the two proposed games. Their titles, controls and proposed appeal live in `content/site.json`. Both concepts remain unimplemented.
+`lights-out.svg` and `patch-panic.svg` are original pixel-grid illustrations authored for the two proposed games. They are retained source assets for superseded, unimplemented proposals. The simplified site no longer publishes them or asks visitors to implement a specific game.
 
 Device and controller diagrams in `scripts/build.mjs` are original simplified illustrations. They are decorative and are not product photographs or dimensioned technical drawings.
 

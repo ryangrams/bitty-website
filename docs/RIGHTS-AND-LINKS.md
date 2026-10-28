@@ -4,9 +4,13 @@ Checked on October 28, 2026. These notes support the public website's wording an
 
 ## User-supplied games
 
-Use this site language:
+Short on-page wording:
 
-> You must own a legitimate copy and have the rights required to use and adapt any game files you load. Owning a copy of Mario or Tetris does not automatically grant those rights. A checkbox cannot grant them either. Bitty does not supply commercial ROMs, APKs, or a commercial game's original artwork or music. Please keep commercial game files out of GitHub and Discord.
+> Bring your own lawful game files. You need a legitimate copy or licence and the rights required to copy, adapt and load it. I don't supply commercial ROMs, APKs, or their original artwork and music.
+
+Optional short text beside game-name references:
+
+> Game names identify the games I'm discussing. Bitty is an independent project.
 
 Mario and Tetris are textual examples. Their names do not establish that those games run on Bitty. Likewise, mentioning APKs does not claim that Bitty supports Android applications.
 
@@ -21,6 +25,40 @@ Primary sources:
 - [U.S. Copyright Office, 17 U.S.C. §1201](https://www.copyright.gov/title17/92chap12.html#1201): access-control circumvention has separate restrictions and exceptions. Do not publish instructions or promises that assume a purchased copy resolves those questions.
 
 The checkbox sentence describes a limit of the website's own interface: Bitty cannot confer a third party's copyright permissions through an acknowledgment.
+
+### Detailed FAQ wording
+
+**Does buying a game give me permission to load or adapt its files?**
+
+> You need a legitimate copy or licence, plus the rights required for the copying, adaptation and loading you plan to do. Owning Mario or Tetris alone does not automatically grant every one of those rights. Check the game's terms and the law that applies to you. A checkbox on this site cannot grant permission from its owner.
+
+**Does Bitty include commercial games or their files?**
+
+> I don't supply commercial ROMs, APKs, or their original artwork and music. Please keep those files out of GitHub and Discord. The current GitHub documentation explains which features are available and what you need to provide yourself.
+
+**What do original game, native game and port mean here?**
+
+> An original game needs its own code and creative material, or material used under a suitable licence. A port adapts an existing game for different hardware and needs the relevant permissions for its code and assets. Native describes how a game runs on the device. It does not establish ownership or permission. Every game's status and source should be clear.
+
+**Would changing the name make an adaptation an original game?**
+
+> A new name leaves the underlying code, art, music and other creative material subject to their existing rights. Game ideas and methods have different copyright treatment from their particular expression. A faithful adaptation still needs its rights checked.
+
+**Can you point me to an Archive.org search for commercial game files?**
+
+> I link to verified rightsholder releases and sources with suitable permissions. A file appearing in an archive or search result does not establish permission to download, adapt or redistribute it. Please use a source you have the rights to use.
+
+Keep targeted Archive.org searches for unverified commercial ROMs or APKs off the website. Archive.org hosts varied material, so a domain-wide conclusion would be inaccurate. Verify the authority and licence for each specific work. Ownership of an original copy does not, by itself, establish the legitimacy of an unrelated download.
+
+### Textual references, trademarks and Jetpack Joyride
+
+The [Copyright Office's games guidance](https://www.copyright.gov/register/tx-games.html) and [Circular 33](https://www.copyright.gov/circs/circ33.pdf) distinguish names, ideas and methods from protected expression. The [USPTO's infringement guidance](https://www.uspto.gov/page/about-trademark-infringement) explains source and sponsorship confusion. Use game names in ordinary text to identify the subject accurately. Avoid logos, branded type treatment, publisher-style presentation or claims of endorsement without permission. This is a publishing recommendation, not a blanket trademark clearance.
+
+The relevant game in this project is **Halfbrick's Jetpack Joyride**. Adept Software's unrelated Jetpack is not the source for this assessment.
+
+[Halfbrick's current terms](https://www.halfbrick.com/terms-of-service), updated October 16, 2025, reserve its intellectual property and restrict adaptations. Section 3.4's Community Projects allowance expressly excludes putting or extracting its game content into another game and requires separate permission for its branding. That allowance does not establish permission for a Joyride port. Renaming an adaptation does not clear its underlying rights.
+
+Before describing that work as an original game or a permission-cleared port, document its source, independently created material and any applicable permissions. This audit does not determine whether a particular implementation infringes. Any independent reimplementation needs its own factual assessment.
 
 ## Original M5StickC Plus
 
@@ -75,6 +113,8 @@ Include this exact statement clearly and conspicuously on the site:
 
 [Amazon's disclosure guidance](https://affiliate-program.amazon.com/help/node/topic/GHQNZAU6669EZS98) requires clear, conspicuous disclosure near links plus the Associates identification statement. [FTC affiliate guidance](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking) explains that readers may not understand the payment relationship from the words “affiliate link” alone.
 
+These sources were rechecked for the simplified site. Keep the disclosure visible with the recommendation and link, including on phones. A footer-only explanation or a disclosure hidden inside a collapsed FAQ does not serve as the link-level disclosure. The existing approved and published paid links stay enabled.
+
 [Amazon's current program policies](https://affiliate-program.amazon.com/help/operating/policies) require accurate website information in the Associates application. Keep purchase claims, prices, and affiliate attribution within what has actually been verified.
 
 ### Owner publication choice and Associates website list
@@ -106,3 +146,20 @@ Ryan requested positioning around a $30 to $40 device. The site presents that as
 On October 28, 2026, manufacturer base listings showed original Plus $19.95, Plus SE $19.00 and StickS3 $21.50. A public Amazon StickS3 listing showed $31.90. These amounts are research context and are deliberately omitted from the live product cards. Recheck current prices before publishing a retail-price claim.
 
 Primary sources: [original Plus](https://shop.m5stack.com/products/m5stickc-plus-esp32-pico-mini-iot-development-kit), [Plus SE](https://shop.m5stack.com/products/m5stickc-plus-se-mini-iot-dev-kit-esp32-pico), [StickS3](https://shop.m5stack.com/products/m5sticks3-esp32s3-mini-iot-dev-kit), [Amazon StickS3](https://www.amazon.com/dp/B0GWHN8HK3).
+
+## Direct USB-A dock accessory audit
+
+The clarified connection is a **USB-A male plug for the dock and a USB-C male plug for the stick**. Both dock and stick have female sockets. An A-male/C-female adapter needs a USB-C male-to-male cable or another suitable connection, so it cannot be presented as a direct mounting adapter by itself.
+
+No new accessory affiliate link was created in this audit. The both-male candidate below lacks enough verified electrical and physical details to support a direct-mount recommendation. No existing paid link or publication setting was changed.
+
+| Candidate | Verified primary-source facts | Remaining limit |
+| --- | --- | --- |
+| [CableCC UC-070-TC006](https://www.cablecc.com/down-angled-usb30-type-a-male-to-usb-31-type-c-male-data-10gbps-charge-adapter-90-degree-for-laptop-phone-p-5382.html) | USB-A male host to USB-C male device, 90-degree down-angled body. Supplier states data and power transfer. | No explicit numeric voltage/current or fit dimensions were located on the product page. Its apparent matching Amazon listing could not be independently read. Dock clearance, USB 2.0 enumeration, charging and connector strain are physically untested. |
+| [Delock 60002 official datasheet](https://www.delock.com/produkt/60002/pdf.html?sprache=en) | USB-A male to USB-C female, 480 Mbps, maximum 5 V and 3 A, approximately 20 x 15 x 7 mm. | Requires a short USB-C male-to-male data cable. It is not a direct mounting adapter. The host's own power limit still applies. |
+| [Satechi ST-TAUCS / ST-TAUCM](https://satechi.com/products/aluminum-type-a-to-type-c-adapter/) | USB-A male to USB-C female. Its [official guide](https://support.satechi.com/hc/en-us/articles/39171655812891-Quick-Start-Guide-Type-A-to-Type-C-Adapter-ST-TAUCS-ST-TAUCM) documents data support. | The product page explicitly specifies data use and excludes charging. Do not recommend it for powering the stick. |
+
+If a direct adapter is later added, label its dock fit and Bitty testing honestly. Manufacturer data and power claims alone cannot establish port clearance, support for the stick's serial interface or safe mechanical support for a rigidly mounted device.
+
+
+The simplified website publishes only the CableCC manufacturer reference, visibly labeled as a candidate with fit and dock mounting untested. Direct HTTP checks of Delock’s official pages returned 401 and its Reichelt retailer returned 503, so those links were excluded from the public page. A bounded exact-model Amazon search found unverified reseller candidates only. No adapter Geniuslink was created. The existing device and IINE paid links remain unchanged.

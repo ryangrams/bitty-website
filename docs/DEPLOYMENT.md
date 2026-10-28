@@ -1,55 +1,46 @@
 # Deployment and verification
 
-The website is deployed at [https://bitty.games](https://bitty.games). Its separate editable source is [ryangrams/bitty-website](https://github.com/ryangrams/bitty-website).
+Live website: [bitty.games](https://bitty.games). Editable source: [ryangrams/bitty-website](https://github.com/ryangrams/bitty-website).
 
-## Hosting
+## Hosting and isolation
 
-Cloudflare Worker: `bitty-website`.
+The dedicated Cloudflare Worker is `bitty-website`, with custom domains `bitty.games` and `www.bitty.games`. The latter redirects to the HTTPS apex, preserving path and query. Its asset directory and account identity are in `wrangler.jsonc`. The Worker’s small request handler is `scripts/worker.mjs`.
 
-Custom domains: `bitty.games` and `www.bitty.games`. The latter redirects to the apex while preserving the path and query. The Worker and assets run on Cloudflare. No local preview process is needed for production.
+The independent checkout is `/Volumes/Shades 4TB/SUDev/bitty-website`. Firmware and installer development stay in their own repository and checkout. Website builds never read or modify the firmware checkout.
 
-The domain was inspected before deployment. Existing Pages projects and Workers were preserved. No existing Bitty website or Worker custom domain was present. The zone was active and its publicly queried apex and `www` addresses had no website records. The OAuth session could inspect zone metadata and Worker routes, but DNS record listing returned 403. Wrangler’s custom-domain flow created the required website routing and managed certificates without an existing-record conflict.
+Before the initial deployment, Cloudflare projects, Worker routes, zone status and public DNS were inspected. The domain was active, with no associated website or Worker route and no publicly resolving website address. The authenticated session could read zone metadata but could not list DNS records. Cloudflare’s custom-domain flow provisioned routing and certificates without an existing-record conflict. Later website revisions reuse those routes and do not change DNS.
 
-The local checkout lives on Shades at `/Volumes/Shades 4TB/SUDev/bitty-website`. It is an independent Git repository. The firmware checkout and its uncommitted installer work were preserved.
+## Publish
 
-## Completed checks
+```sh
+npm run build
+npm run check
+npx wrangler@4.143.0 deploy
+```
 
-- Static build and content checks pass with no application dependencies.
-- HTTPS returns 200 with certificate validation enabled.
-- HTTP redirects to HTTPS.
-- HTTPS `www` redirects to the apex, preserving a test path and query.
-- Missing pages return the custom 404 with status 404.
-- Authoritative Cloudflare DNS and public resolvers return the deployed addresses. DNS-over-HTTPS requests from the Mac Studio and TrashMac both return the public site with status 200. Some local DNS caches initially retained the earlier negative result.
-- The ZeroTier preview was reachable from TrashMac.
-- Desktop layout was visually inspected. Phone layouts at 390 pixels and 320 pixels have no horizontal overflow.
-- The skip link moves focus to `main`. Tab moves between navigation links. Keyboard focus is visible with an amber outline. The interface uses native links and a native disclosure control.
-- The hero and both concept images load, have dimensions and alternative text, and are visibly labeled as illustrations or concepts.
-- Firmware, Issues, prefilled issue actions, manufacturer pages, Discord, GitHub Sponsors, Studio Upgrade and the rights reference were checked. GitHub sign-in preserves prefilled issue contents.
-- All three Geniuslink destinations return the intended Amazon ASIN with the owner’s Associates tag. Public purchase buttons remain gated on the website-list setting described below.
-- Security headers include CSP, HSTS, frame protection, MIME sniffing protection and restricted browser permissions. The website has no analytics script, cookie, form or client-side JavaScript.
+Use the existing authenticated Cloudflare account. If necessary, run `npx wrangler@4.143.0 login` locally. Credentials live outside the repository. No GitHub Actions secret is required.
 
-## Remaining activation steps
+Commit and push the editable source, deploy, then verify:
 
-### Amazon Associates website list
+- Valid HTTPS returns 200 at `https://bitty.games/`.
+- HTTP redirects to HTTPS. `www` redirects to the apex while preserving a test path and query.
+- A missing path returns the custom 404 with status 404.
+- Phone layouts have no horizontal overflow, show the hero image above the fold and preserve readable hardware information.
+- The keyboard skip link, visible focus and expandable notes work.
+- Every Load Bitty action reaches the same published GitHub loader. Its preview or release status matches the website.
+- Creator guides, file guides, skills, Issues, Discord, GitHub Sponsors, manufacturer references and paid destinations resolve as expected.
+- The published HTML and versioned stylesheet match the build. Security headers are present.
 
-The account’s three affiliate links are ready:
+Cloudflare retains Worker versions. Use its dashboard or `npx wrangler@4.143.0 rollback` to restore one, then verify the public domain. Restoring Git source alone does not change the live website.
 
-| Item | Geniuslink | Verified Amazon ASIN | Bitty status |
-| --- | --- | --- | --- |
-| StickC-Plus SE | [Open link](https://geni.us/SUm5stickplusse) | B0HCYBPKJT | Support unverified. No onboard IMU. |
-| StickS3 | [Open link](https://geni.us/SUm5sticks3) | B0GWHN8HK3 | Support unverified. Needs its own port. |
-| IINE Mini Controller, Grey | [Open link](https://geni.us/SUiinegamebrick) | B0FLK6TP38 | Tested in H mode on the original Plus. |
+## Activation status
 
-The available Amazon browser session is not connected to the existing Associates account, so its approved website list could not be verified. The owner needs to sign into that existing account and verify or add `https://bitty.games`, preserving the other entries. Then set `affiliate.siteApproved` to `true` in `content/site.json` and redeploy. This reveals the verified purchase buttons, each labeled “Paid link,” with the disclosure beside them. No extra account is needed.
+GitHub Sponsors is active with one-time support. The Discord invite and general channel are verified. The existing Amazon Associates account lists `bitty.games`, and the three verified Geniuslinks are enabled with paid-link disclosures. No separate coffee account or new affiliate account is needed.
 
-### Separate firmware release
+The firmware loader remains an interface preview with flashing disabled. That is the remaining installation activation task, owned by the separate firmware project. Follow [VERIFICATION.md](VERIFICATION.md) before changing readiness or adding a board to the tested list. Website deployment does not prove a successful device installation.
 
-The firmware source is now public at commit `f83f0cda458d3b0ab730b52d53191a932a4079e8`. Its GitHub Pages interface preview returns 200, while `release.json` reports `available: false` and `manifest.json` returns 404. No GitHub release is available. “Load your device” opens the GitHub project, and a secondary link opens the installer preview. Installation and firmware downloads remain disabled. The installation handoff is incomplete.
+USB-A accessories are linked as manufacturer-documented candidates. Dock fit and device data/power checks are pending. No new accessory affiliate destination was verified.
 
-Once the separate firmware task publishes an installable device-specific release, follow [VERIFICATION.md](VERIFICATION.md). Check the actual public page, its device list, manifests and binary URLs before enabling the verified installation destination in `content/site.json`. Website publication does not establish a working USB installer.
+## Temporary output
 
-GitHub Sponsors is already active with one-time support. The Discord invite and destination channels are verified. Neither requires owner activation for this website.
-
-## Update or roll back
-
-See the [repository README](../README.md) for build, deployment and rollback commands. Keep compatibility, links and game status in `content/site.json`. After edits, run the build and checks, commit and push the source, deploy, then verify the public domain again.
+`dist/` is reproducible build output, and `artifacts/` contains local publication checks and screenshots. Both are ignored. Remove `dist/` after a verified deployment to keep the checkout lean. Restore it with `npm run build`. Stop the temporary preview when the live site is ready. Production runs on Cloudflare and survives closing this chat.

@@ -13,7 +13,7 @@ npm run build
 npm run check
 ```
 
-Edit `content/site.json` for external links, hardware compatibility, controller details, game status, original game concepts and installation status. Edit `scripts/build.mjs` for page structure and the remaining copy. Edit `style.css` for layout, type and color.
+Edit `content/site.json` for external links, hardware compatibility, controller details, game status, upcoming originals, feature labels, accessories and installation status. Edit `scripts/build.mjs` for page structure and the remaining copy. Edit `style.css` for layout, type and color.
 
 The generated `dist/` directory is ignored by Git. Build it again with `npm run build`. Each build replaces only that directory. The generated `dist/` was removed after the verified deployment to keep the checkout lean. Restore it with `npm run build`.
 
@@ -53,7 +53,7 @@ Cloudflare keeps deployed Worker versions. Use its dashboard or `npx wrangler@4.
 
 ## Installation handoff
 
-The source and GitHub Pages installer preview are public. The preview reports `available: false`, with installation and firmware downloads disabled pending a physical USB check. `installation.verified` stays `false`. “Load your device” links to the firmware project, and a separate link opens the clearly labeled installer preview.
+The source and GitHub Pages installer preview are public. The preview reports `available: false`, with installation and firmware downloads disabled pending a physical USB check. `installation.verified` stays `false`. Every “Load Bitty” button opens the same canonical GitHub loader at `https://ryangrams.github.io/bitty/`, with a visible preview status. The loading steps describe the flow once a release is enabled.
 
 After the separate firmware work is published, follow [the activation criteria](docs/VERIFICATION.md). Verify the actual public installer, its device list, release manifest and firmware assets. Then set its exact URL, `verified: true`, `verifiedAt` and `release` in `content/site.json`, update the surrounding status text, and redeploy. A successful website deployment does not establish that the installer works.
 
@@ -71,14 +71,18 @@ GitHub Sponsors is already active, including one-time coffee support. No separat
 
 ## Community and game files
 
-The verified Studio Upgrade Discord invite lands in its rules channel. General discussion belongs in its general channel. Actionable bugs and device-port requests go to GitHub Issues. See [community destinations](docs/COMMUNITY.md).
+The verified Studio Upgrade Discord invite lands in its rules channel. General discussion belongs in its general channel. Actionable bugs and device-port requests go to GitHub Issues. See [community destinations](docs/COMMUNITY.md). Studio Upgrade is named only to identify that Discord. Ryan Grams is the project’s maker.
 
 Never invite visitors to upload commercial game files. Users need legitimate copies and the rights required to use and adapt the files they load. Ownership of a copy and ownership of copyright are separate. Preserve the rights explanation and its primary-source link.
 
+## Creating games
+
+The site links the firmware project’s public skills, agent quickstart and game-making guide. Native games need a firmware build. Supported runtime file adapters have documented formats. Creators host their own original or properly licensed files and submit a repository link through GitHub Issues for review. This website has no community file upload or cart hosting.
+
 ## Assets and privacy
 
-Original concept artwork is included in `assets/illustrations`. The revised hero uses the user’s Plus SE photo as a hardware reference and shows generated Galaga and Flappy Bird screen mockups. It is labeled as illustrative, with the reference shell separated from tested firmware compatibility. The two proposed game scenes are original SVG concept art. None of these images are photographs of a running firmware build. Replace them with approved real photography when available. Keep image dimensions, alternative text and honest labels.
+Original concept artwork is included in `assets/illustrations`. The revised hero uses the user’s Plus SE photo as a hardware reference and shows generated Galaga and Flappy Bird screen mockups. It is labeled as illustrative, with the reference shell separated from tested firmware compatibility. Hockey Queen uses its original title artwork, labeled as artwork for a Bitty adaptation in development. The older flashlight and cable-puzzle concept SVGs remain source assets and are excluded from the current build. None of these images are photographs of a running firmware build. Replace them with approved real photography when available. Keep image dimensions, alternative text and honest labels.
 
-The original hero PNG is retained as a source asset. The build publishes a compressed WebP and JPEG for the page and social previews. Self-hosted Archivo, Inter Tight and JetBrains Mono have their OFL license files beside them. See [asset provenance](docs/ASSETS.md).
+The original hero PNG is retained as a source asset. The build publishes the current compressed hero WebP and social JPEG, plus the lossless Hockey Queen WebP. Self-hosted Archivo, Inter Tight and JetBrains Mono have their OFL license files beside them. See [asset provenance](docs/ASSETS.md).
 
 The site runs without client-side JavaScript, analytics scripts, cookies, forms or a database. External services apply their own policies. HTTP security headers are generated in `dist/_headers`. USB permissions are disabled on this public website. Installation belongs on the separate verified installation page.

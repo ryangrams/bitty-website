@@ -2,15 +2,13 @@
   "site": {
     "name": "Bitty",
     "origin": "https://bitty.games",
-    "description": "Tiny games and apps on small hardware. A growing side project by Ryan Grams, born from a questionable summer-camp idea.",
+    "description": "Favorite games, original experiments and a desk clock on tiny M5Stick hardware. An evolving project by Ryan Grams.",
     "checked": "2026-10-28",
     "story": "I wanted to build a game device small enough for my kids to sneak into summer camp. We definitely got caught. The project kept growing anyway.",
-    "intro": "Bitty grew into a home for some of our favorite games, ported to hardware that fits in your palm.",
-    "approachHeading": "Built around tilt and a few buttons.",
-    "approachText": "Porting a favorite to a screen this small means rethinking how it plays. I wanted tilting the device and tapping its few buttons to feel fun on their own.",
+    "intro": "I’ve been porting some of our favorite games to a tiny screen, then figuring out how much fun we can squeeze out of tilt, a few buttons and an itty-bitty controller.",
     "budget": {
       "amount": "$30 to $40",
-      "note": "The device budget I had in mind. Prices vary by model and retailer. The optional controller is sold separately."
+      "note": "My target budget for the stick. Check current store prices. Controller and adapters are extra."
     },
     "hero": {
       "image": "bitty-games-mockup-v2.webp",
@@ -18,7 +16,7 @@
       "alt": "Two translucent orange M5Stick devices matching the supplied Plus SE reference, with illustrative Galaga and Flappy Bird screens.",
       "caption": "Galaga + Flappy Bird",
       "label": "Illustrative screen mockups",
-      "note": "Illustrative game screens. Public starter artwork differs. The mockups use a Plus SE shell. The original Plus is tested; SE support remains unverified."
+      "note": "Illustrative Galaga and Flappy Bird screens in Plus SE shells. Public starter art differs. SE hardware testing is pending."
     }
   },
   "links": {
@@ -27,17 +25,37 @@
     "issues": "https://github.com/ryangrams/bitty/issues",
     "newIssue": "https://github.com/ryangrams/bitty/issues/new",
     "discord": "https://discord.gg/Y9r6MQEsm4",
-    "studio": "https://studioupgrade.com",
     "sponsors": "https://github.com/sponsors/ryangrams",
     "coffee": "https://github.com/sponsors/ryangrams?frequency=one-time",
-    "copyright": "https://www.copyright.gov/help/faq/faq-digital.html"
+    "copyright": "https://www.copyright.gov/help/faq/faq-digital.html",
+    "skills": "https://github.com/ryangrams/bitty/tree/main/skills",
+    "creating": "https://github.com/ryangrams/bitty/blob/main/docs/CREATING_GAMES.md",
+    "agentQuickstart": "https://github.com/ryangrams/bitty/blob/main/docs/AGENT_QUICKSTART.md",
+    "loaderDocs": "https://github.com/ryangrams/bitty/blob/main/docs/USB_LIBRARY.md",
+    "clockHomes": "https://github.com/ryangrams/bitty/blob/main/docs/GAME_HOMES.md"
   },
   "installation": {
     "verified": false,
-    "url": null,
-    "status": "Installer preview only",
-    "note": "The source and installer preview are public on GitHub. Installation and firmware downloads are disabled while the first physical USB load is checked.",
-    "previewUrl": "https://ryangrams.github.io/bitty/"
+    "url": "https://ryangrams.github.io/bitty/",
+    "status": "USB loader preview",
+    "note": "The loader is public. Firmware downloads and flashing are disabled while USB loading and recovery are verified.",
+    "checked": "2026-10-28",
+    "release": "preview-46389a4c",
+    "releaseAvailable": false,
+    "steps": [
+      {
+        "title": "Open the loader",
+        "text": "Open the link on a computer in Chrome or Edge. The loader checks for Web Serial support."
+      },
+      {
+        "title": "Connect your M5Stick",
+        "text": "Use a USB cable that carries data. Pick the exact device model and its serial port."
+      },
+      {
+        "title": "Load, then play",
+        "text": "When the release is enabled, follow the loader’s install steps. Compatible game files can be added there too."
+      }
+    ]
   },
   "community": {
     "inviteVerified": true,
@@ -51,36 +69,45 @@
       "id": "plus",
       "name": "Original M5StickC Plus",
       "model": "K016-P · ESP32-PICO-D4",
-      "status": "Tested device",
+      "status": "Tested in firmware",
       "state": "tested",
-      "description": "This is the little orange device I’ve tested. It has a 135 × 240 screen, buttons and an onboard motion sensor. M5Stack now lists it as end of life, so check the exact model before hunting one down.",
+      "description": "The original orange stick I’ve tested. New browser installation still needs verification. M5Stack lists this model as end of life.",
       "source": "https://docs.m5stack.com/en/core/StickC-Plus",
       "purchaseUrl": null,
-      "affiliateVerified": false
+      "affiliateVerified": false,
+      "tilt": true,
+      "audio": "Passive buzzer",
+      "screen": "135 × 240"
     },
     {
       "id": "se",
       "name": "StickC-Plus SE",
       "model": "Separate hardware · no onboard IMU",
-      "status": "Support unverified",
+      "status": "Testing pending",
       "state": "planned",
-      "description": "A candidate for button-based games. The SE removes the onboard motion sensor, so tilt controls need a different plan. It needs its own Bitty build and testing.",
+      "description": "A planned member of the lineup. Its own Bitty target and physical checks are still needed.",
       "source": "https://shop.m5stack.com/products/m5stickc-plus-se-mini-iot-dev-kit-esp32-pico",
       "purchaseUrl": "https://geni.us/SUm5stickplusse",
       "affiliateVerified": true,
-      "approvedTarget": "https://a.co/d/0aIvGvvB"
+      "approvedTarget": "https://a.co/d/0aIvGvvB",
+      "tilt": false,
+      "audio": "Passive buzzer",
+      "screen": "135 × 240"
     },
     {
       "id": "s3",
       "name": "M5StickS3",
       "model": "Separate hardware · ESP32-S3",
-      "status": "Build compiles",
+      "status": "Build compiles; testing pending",
       "state": "planned",
-      "description": "A separate StickS3 build now compiles. Controls, audio, Bluetooth and sleep still need checks on real hardware. Physical compatibility remains unverified.",
+      "description": "A separate S3 build compiles. Sound, controls, Bluetooth and timing still need checks on the device.",
       "source": "https://docs.m5stack.com/en/core/StickS3",
       "purchaseUrl": "https://geni.us/SUm5sticks3",
       "affiliateVerified": true,
-      "approvedTarget": "https://a.co/d/004XU2s8"
+      "approvedTarget": "https://a.co/d/004XU2s8",
+      "tilt": true,
+      "audio": "Speaker",
+      "screen": "135 × 240"
     }
   ],
   "controller": {
@@ -96,48 +123,133 @@
   },
   "games": [
     {
+      "name": "Flappy",
+      "kind": "native",
+      "status": "No extra game files",
+      "description": "Tap to flap. The public build uses project-made starter art. Clock mode and experimental linked play are in the source.",
+      "controls": "Front button or controller A"
+    },
+    {
       "name": "Galaga",
-      "status": "Ported · play-testing pending",
-      "description": "Our Galaga adaptation uses original code and graphics. Tilt left or right to move, then tap or hold the front M5 button to fire. Controller directions and A/B are implemented. Physical play-testing for this game is still pending."
+      "kind": "native",
+      "status": "No extra game files",
+      "description": "Our tiny-screen adaptation uses project code and artwork. Physical play-testing is still pending.",
+      "controls": "Tilt to move, button to fire"
     },
     {
-      "name": "Flappy Bird",
-      "status": "Ported · release pending",
-      "description": "Tap the front M5 button to flap, start or try again. Controller A does the same, and B opens the menu. This one uses a button, with no tilt input. The public source includes original starter art."
+      "name": "Arkanoid",
+      "kind": "native",
+      "status": "No extra game files",
+      "description": "A native brick-breaking adaptation with project-made artwork. Release testing is in progress.",
+      "controls": "Tilt the paddle; M5 launches / fires"
     },
     {
-      "name": "More favorites + file adapters",
-      "status": "Ports + experiments",
-      "description": "We’ve also been working on block-stacking games, NES cartridge adapters and more arcade favorites. Compatibility varies by file and build. Bring files you’re entitled to use and adapt."
+      "name": "Bitty Jet",
+      "kind": "review",
+      "status": "Native prototype",
+      "description": "A jetpack runner with project-made art. No extra game files. Release review is still in progress.",
+      "controls": "Hold M5 to climb; release to fall"
     },
     {
-      "name": "Two-device play",
-      "status": "Experimental",
-      "description": "Linked play between two devices is being explored. A complete two-device radio playthrough still needs testing."
-    }
-  ],
-  "concepts": [
-    {
-      "name": "Lights Out",
-      "type": "Flashlight dodging",
-      "image": "/assets/illustrations/lights-out.svg",
-      "alt": "Original concept art: a tiny purple player moves between tents and trees, away from amber flashlight beams.",
-      "description": "The camp is quiet. The flashlight beams are doing laps. Pick your way back to the tent while the cones of light sweep between trees. Getting greedy about one more step is the whole problem.",
-      "controls": "Tilt to creep. Hold the front button to freeze behind cover. A button-only control option would let you step between lanes.",
-      "appeal": "Short rounds, readable shadows and that very specific feeling of getting away with something for a few glorious steps."
+      "name": "Mario / NES",
+      "kind": "files",
+      "status": "Your game file",
+      "description": "Compatible NTSC NES cartridges, including a Mario clock mode. Bring the supported file and the rights to use it.",
+      "controls": "Buttons or controller",
+      "guide": "https://github.com/ryangrams/bitty/blob/main/docs/NES.md"
     },
     {
-      "name": "Patch Panic",
-      "type": "Cable-routing puzzle",
-      "image": "/assets/illustrations/patch-panic.svg",
-      "alt": "Original concept art: violet and amber cables cross a small grid between matching sockets.",
-      "description": "Connect the right ports on a tiny patch panel. Every cable uses precious space. One suspiciously unhelpful lead keeps finding a way into the wrong socket. Yes, I want to make a game about cable management.",
-      "controls": "Tap the side button to pick a tile. Tap the front button to rotate its cable. Hold to test the circuit. A tilt option could move the cursor.",
-      "appeal": "A pocket-size puzzle with a clean little payoff when the whole signal path lights up."
+      "name": "Tetris",
+      "kind": "files",
+      "status": "Your game files",
+      "description": "Supported cartridge adapters, with experimental two-device linking. Files must match the preparation guide.",
+      "controls": "Buttons or controller",
+      "guide": "https://github.com/ryangrams/bitty/blob/main/docs/TETRIS.md"
+    },
+    {
+      "name": "Geometry Dash / Famidash",
+      "kind": "files",
+      "status": "Your game file",
+      "description": "Uses a supported, prepared Famidash payload. The guide explains the required format and limitations.",
+      "controls": "Prepared cartridge adapter",
+      "guide": "https://github.com/ryangrams/bitty/blob/main/docs/GEOMETRY_DASH.md"
     }
   ],
   "affiliate": {
     "disclosure": "As an Amazon Associate I earn from qualifying purchases.",
     "publishPaidLinks": true
-  }
+  },
+  "features": [
+    {
+      "icon": "clock",
+      "title": "A clock you can play",
+      "text": "In the source build, each game opens on an animated clock. Press M5 to play, tap left to switch. Leave it on USB power at your desk or monitor.",
+      "status": "New clock homes await device testing",
+      "guide": "https://github.com/ryangrams/bitty/blob/main/docs/GAME_HOMES.md"
+    },
+    {
+      "icon": "tilt",
+      "title": "Tilt. Tap. Try again.",
+      "text": "Tiny screens and a few buttons are the point. Tilt controls work on motion-sensor models. The Plus SE has no tilt sensor.",
+      "status": "Model dependent"
+    },
+    {
+      "icon": "controller",
+      "title": "Itty bitty. IINE Mini.",
+      "text": "I wanted a physical controller, too. It had to stay small, so I went with the IINE Gamebrick Mini. H mode is tested on the original Plus.",
+      "status": "Optional controller"
+    },
+    {
+      "icon": "link",
+      "title": "Bring a second stick",
+      "text": "Linked Flappy and Tetris modes are experimental. More two-player and co-op games are planned. Full two-device playtests are still ahead.",
+      "status": "Two-player coming soon"
+    },
+    {
+      "icon": "dock",
+      "title": "Give it a little home",
+      "text": "I’m working on printable controller mounts and a desk dock with room to route a cable. STL downloads will appear when they’re ready.",
+      "status": "STLs in development"
+    },
+    {
+      "icon": "code",
+      "title": "Make it your own",
+      "text": "Fork a game, add a clock face or build something weird. The firmware, skills and game-making guides live together on GitHub.",
+      "status": "Built in the open"
+    }
+  ],
+  "upcoming": [
+    {
+      "name": "Tilt racer",
+      "label": "Original concept",
+      "description": "Tilt to steer. Tap to jump an obstacle. I want racing that feels good while the whole console is moving in your hand.",
+      "status": "In development"
+    },
+    {
+      "name": "One-button runner",
+      "label": "Original concept",
+      "description": "A character runs back and forth. You get one job: jump at the right moment. Small screen, very little room to blame the controls.",
+      "status": "In development"
+    },
+    {
+      "name": "Hockey Queen",
+      "label": "An original game by Ryan Grams",
+      "description": "Asymmetric air hockey: easy for one player, ridiculously hard for the other. I’m working on a Bitty version of my original game, with an iPhone App Store release planned too.",
+      "status": "Bitty version in development",
+      "image": "hockey-queen.webp",
+      "width": 192,
+      "height": 288,
+      "alt": "Original Hockey Queen pixel art showing the Queen and Peasant beneath a rainbow, with castles and creatures."
+    }
+  ],
+  "accessories": [
+    {
+      "name": "Direct USB-A adapter",
+      "description": "CableCC UC-070-TC006 has male A and C ends. The maker lists data and power support. Stick fit and dock mounting are untested.",
+      "source": "https://www.cablecc.com/down-angled-usb30-type-a-male-to-usb-31-type-c-male-data-10gbps-charge-adapter-90-degree-for-laptop-phone-p-5382.html",
+      "sourceLabel": "See the adapter candidate",
+      "affiliateVerified": false,
+      "purchaseUrl": null
+    }
+  ]
 }

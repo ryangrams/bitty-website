@@ -1,95 +1,66 @@
 # Bitty website verification
 
-Refreshed on 2026-10-28 at 12:27 UTC. This records what the website can claim today and what needs another check before a claim changes.
+Checked October 28, 2026. This is the evidence for the public website’s status labels. Firmware work is owned by the separate Codex conversation **Flappy M5** and checkout `/Volumes/Shades 4TB/SUDev/m5-flappy`. This website task has not edited that checkout or flashed a device.
 
-## Firmware evidence
+## Installation handoff
 
-The firmware project is [ryangrams/bitty](https://github.com/ryangrams/bitty). Its working checkout is `/Volumes/Shades 4TB/SUDev/m5-flappy`.
+Every **Load Bitty** button opens the same [GitHub loader](https://ryangrams.github.io/bitty/). The public page and application module return 200. At the initial audit, its `release.json` reported `available: false` and version `preview-46389a4c`. Its actual expected manifest, `/bitty/firmware/manifest.json`, returned 404, and GitHub releases were empty. The app exits before enabling installation when the release is unavailable.
 
-The audited local commit and public `main` both point to `f83f0cda458d3b0ab730b52d53191a932a4079e8` (`Add StickS3 builds and shared speaker audio`). The local checkout was clean. The firmware source, USB manager and engineering documentation are now public. The installer remains a development preview with firmware downloads disabled.
+The public site therefore labels the destination **USB loader preview** and states that flashing and firmware downloads are disabled. The three steps describe the intended flow once a release is enabled. The handoff is not complete until a real published release is installed and recovered on the exact supported hardware.
 
-This was a read-only audit. It inspected the project's documentation, relevant input and rendering code, Git status, local renderer previews and published GitHub Pages content. It did not change firmware files, build firmware, open a serial connection, flash hardware or run a new physical game test. Hardware results below are the firmware project's recorded results. No existing project graph was found.
+[ESP Web Tools](https://esphome.github.io/esp-web-tools/) currently documents desktop Firefox, Chrome and Edge, using Web Serial over HTTPS. iOS is unsupported and Android installation support is not implemented there. The site recommends starting with desktop Chrome or Edge, and retains the loader’s actual capability check. Bitty has no completed browser and OS installation matrix. A data cable is required. A USB serial driver may be needed for the board and OS, as documented by [M5Stack](https://docs.m5stack.com/en/core/StickC-Plus). Avoid promising that no setup is ever needed.
 
-## Hardware and controller claims
+Before changing `installation.verified`:
 
-| Item | Website status | Evidence and limits |
-| --- | --- | --- |
-| Original M5StickC Plus | Tested device | ESP32-PICO-D4, 4 MiB flash, no PSRAM, 135 by 240 portrait display. `skills/m5stick-development/references/hardware.md:3` records this device. The published USB preview identifies the original Plus as its intended board. The new USB partition layout and transfer flow still need their first complete physical check. |
-| StickS3 | Compiling build target, physical testing pending | A separate ESP32-S3 target now builds with 8 MiB flash, 8 MiB PSRAM and speaker audio. Physical sound, controls, Bluetooth, sleep and frame timing remain unverified. `docs/STICKS3_AUDIO.md:3,23` and `docs/RELEASE_STATUS.md:17`. |
-| StickC-Plus SE, Plus2, original StickC and Core boards | Unverified | Each needs its own firmware review and hardware checks. Build flags or automatic display detection do not establish support. The SE has no onboard motion sensor, so tilt input needs separate consideration. |
-| IINE Gamebrick Mini | Tested in H keyboard mode | Yellow indicator, advertised as `IINE-keyboard`. The firmware records pairing, reconnect after flashing, Tetris directional movement and both rotations, and Mario jump, run and combined running jump. `docs/CONTROLLERS.md:15-26,78`. |
-| IINE C profiles and other controllers | Unverified | Advertised controller names do not establish compatibility. The firmware supports BLE HID and excludes Bluetooth Classic HID. `docs/CONTROLLERS.md:26,74,80`. |
+1. Record the public firmware commit, release tag, manifest, board list and artifact hashes.
+2. Fetch the actual manifest and all referenced binaries with valid HTTPS.
+3. Obtain a physical receipt for fresh installation, boot, runtime transfer and recovery on the exact board. A compiling build or successful HTTP response is insufficient.
+4. Verify file formats, browser guidance, driver caveats, removal and interrupted-transfer behavior against the published instructions.
+5. Set `verified`, `verifiedAt`, `release` and `releaseAvailable` in `content/site.json`, update its status and steps, then rebuild, check and follow the deployed website’s button again.
 
-The IINE's full playthroughs, power-cycle coverage, Tetris Up/Down/Hold and Mario title shortcuts still need physical checks. Say that H-mode controls have been tested. Avoid implying every profile or every game has completed controller testing.
+## Firmware facts
 
-Additional devices are planned. Publish new compatibility only after the firmware project supplies a device-specific build and recorded hardware verification. Keep dates out of that promise.
+The initial source audit covered public `main` at `46389a4c885b7b5d8061805680e974029a5cf0d5`. The separate firmware task then published the shared clock homes and authoring guides in commit `d16bd145bc4adf6d9310187749709ea1c768906d`. Cross-chat coordination confirmed the canonical loader, current source game list, required user files, missing release checks and authoring documentation plan.
 
-## Games and current status
+| Item | Public label and limit |
+| --- | --- |
+| Original M5StickC Plus | Tested in firmware. New browser partition layout and loading still need verification. Onboard IMU and passive buzzer. |
+| StickC-Plus SE | Testing pending. No separately verified Bitty target. No onboard IMU. Passive buzzer. |
+| M5StickS3 | Separate build compiles. Physical input, sound, Bluetooth and timing checks pending. Onboard IMU and speaker. |
+| IINE Gamebrick Mini, Grey | H keyboard mode, yellow indicator. Pairing, reconnect, Tetris directions/rotation and Mario run/jump combinations recorded on the original Plus. Other modes and complete playthroughs remain unverified. |
 
-These implementations are present in the public source and have been used in local firmware builds. No downloadable GitHub release was available at the audit time. The published USB interface preview withholds firmware images.
+Sources: firmware `docs/CONTROLLERS.md`, `docs/STICKS3_AUDIO.md`, `docs/RELEASE_STATUS.md`, plus the manufacturer links in `content/site.json`. Sound hardware does not establish audible Bitty output. No listening test was performed by this website task.
 
-| Capability | Recorded state | Evidence |
-| --- | --- | --- |
-| Flappy Bird modes and procedural themes | Native implementation with Original, Clock, Demo, Arcade, Big and Co-op modes. The public starter build uses authored replacement art. Compatible original artwork requires user-supplied files. | `README.md`, Flappy Bird modes section, and `tools/starter_assets.py`. |
-| NES cartridge support | Implemented for compatible user-supplied cartridges. Individual games have format, mapper and control limits. | `docs/NES.md`. |
-| Tetris adapters | Implemented using prepared user-supplied cartridges. Some controls and layouts still need physical checks. | `docs/TETRIS.md` and the README's hardware verification notes. |
-| Geometry / Famidash adapter | Implemented with a supported user-supplied Famidash cartridge. | `docs/GEOMETRY_DASH.md`. |
-| Galaga and Arkanoid adaptations | Native code with original graphics and generated layouts. Automated hardware timing probes exist. Physical tilt feel, sound and controller play remain unverified. | `docs/TILT_ARCADE.md:3,34`. |
-| Jetpack adaptation | Native code and original art. Requires no ROM for its project-created presentation. Fidelity work and hardware checks remain in progress. | `docs/JETPACK.md:3-7` and `docs/JETPACK_AUDIT.md`. |
-| Two-device Flappy and Tetris links | Experimental. Complete two-device radio playthroughs remain untested. | `docs/COOP.md`, `docs/TETRIS.md` and the README's hardware verification notes. |
-| New original game proposals | Concepts until code exists and the firmware project verifies implementation. | Website concepts are proposals, not evidence of shipped games. |
+| Game or adapter | File requirements and controls |
+| --- | --- |
+| Flappy | Authored public starter art. No extra game files. M5 or controller A flaps. |
+| Galaga | Native adaptation with project graphics. No extra game files. Tilt moves, M5 fires. Physical game testing pending. |
+| Arkanoid | Native adaptation with project graphics. No extra game files. Tilt moves the paddle, M5 launches and fires when Laser is active. |
+| Bitty Jet | Native jetpack prototype, renamed from the Jetpack Joyride reference. No extra game files. Hold M5 or controller A/B to climb, release to fall. Release and rights review remain separate from the rename. |
+| Mario / NES | Supported user-supplied NTSC NES cartridges, subject to mapper, format and control limits. |
+| Tetris | Supported prepared user-supplied cartridges and adapters. |
+| Geometry Dash / Famidash | Supported prepared user-supplied Famidash payload. |
 
-Use development labels for the existing firmware work. Keep both new original proposals labeled **Concept** until implemented. Screenshots, generated artwork and mockups must say what they depict. A drawing of a concept on a device cannot establish that the game runs there.
+Sources: `README.md`, `docs/NES.md`, `docs/TETRIS.md`, `docs/GEOMETRY_DASH.md`, `docs/TILT_ARCADE.md`, `docs/JETPACK.md` and `THIRD_PARTY_NOTICES.md`. Project-made source art and code are recorded provenance, not an overall legal clearance opinion.
 
-## Galaga and Flappy controls
+Flappy and Mario clock modes existed at the initial audit. USB power keeps the device awake, while battery inactivity sleep applies. All seven shared clock homes are now implemented in the public source at `d16bd14`, with host tests and Plus/S3 build checks reported by the firmware task. Their new device flash is pending because its MacBook host is unreachable. The site labels the new clock homes as awaiting device testing. See [GAME_HOMES.md](https://github.com/ryangrams/bitty/blob/main/docs/GAME_HOMES.md) for controls: M5 starts play, left cycles games and holding right opens the menu. Two-device Flappy and Tetris modes exist in source but full physical playthroughs remain pending. Controller mode and device linking share Bluetooth and disconnect each other. Do not imply simultaneous controller and linked-device operation.
 
-| Game | Device controls | Controller controls |
-| --- | --- | --- |
-| Galaga | Tilt left/right to move. Tap or hold front M5 to fire. Tap right to pause/resume. Tap left to save neutral tilt and pause. Hold right for 700 ms to open the menu. | Left/right replaces tilt movement. A or B fires. Start pauses/resumes. A dedicated Menu button opens the M5 menu. |
-| Flappy Bird | Press front M5 to flap, start or replay. Hold right for 700 ms to open the menu. Tilt is unused. | A flaps, starts or replays. B opens the menu or advances within it. A dedicated Menu button opens the M5 menu. |
+## Original projects and files
 
-Galaga resumes from pause with the front button too. After selecting a game or leaving a menu, held action buttons must be released before the next shot. The IINE H-mode test scope above does not establish a completed Galaga controller playthrough.
+The tilt racer and one-button runner are original concepts in development. Hockey Queen is Ryan’s original asymmetric air-hockey game, with an iPhone App Store release planned and a Bitty adaptation in development. Its title artwork is original project art, not a Bitty screenshot. Controller mounts and a cable-routing desk dock are planned STL projects, with no download or date promised.
 
-Sources: `docs/TILT_ARCADE.md:9-22`, `docs/CONTROLLERS.md:32-33,57-58`, `firmware/flappy/flappy.ino:1303-1317,2409,2484` and `firmware/flappy/app_model.h:915-917` at the audited commit.
+The public [skills directory](https://github.com/ryangrams/bitty/tree/main/skills) contains `content-to-github`, `m5stick-development` and `m5stick-game-fidelity`. The separate firmware task published [AGENT_QUICKSTART.md](https://github.com/ryangrams/bitty/blob/main/docs/AGENT_QUICKSTART.md) and [CREATING_GAMES.md](https://github.com/ryangrams/bitty/blob/main/docs/CREATING_GAMES.md) at `d16bd14`. Both raw public files returned 200 and their instructions were reviewed. The current firmware menu uses **Bitty Jet** as its display name. The loader footer now names Ryan Grams as maker.
 
-## Screen imagery
+Native games currently need compilation into firmware. Runtime user-file loading supports documented NES/adapted formats. Arbitrary native plug-ins are not supported. Creator instructions ask people to host their own original or properly licensed code and files, then submit a GitHub Issue containing the repository URL and licensing details for review. The website hosts no community cart files.
 
-The firmware checkout contains original Galaga renderer output at `.local/tilt-arcade/galaga-ready.png`, `galaga-formation.png`, `galaga-tractor.png`, `galaga-dual.png` and `galaga-bonus.png`. These are 135 by 240 renderer fixtures produced by `.local/tilt-arcade/galaga_render.cpp`. The Galaga implementation last changed in commit `af968dc3ad50f8be44828ff717b11aaf7ae57b05` on 2026-10-27. These scenes represent the current renderer. Label them as renderer previews when used as a reference, and distinguish a composited device mockup from a photograph of hardware.
+## Rights, community and purchases
 
-The old Flappy reference images `.local/artifacts/preview.png` and `.local/artifacts/features-preview.png` contain privately imported original game artwork. They show green pipes, a yellow bird and bright city scenery. Keep those images and their imported art out of this website.
+See [RIGHTS-AND-LINKS.md](RIGHTS-AND-LINKS.md) for current Copyright Office, Halfbrick, Amazon and FTC sources. See [COMMUNITY.md](COMMUNITY.md) for the verified Discord invite and general channel. Generic commercial ROM/APK searches are not linked. Stars, payment and Discord membership are optional.
 
-The public starter art is generated by `tools/starter_assets.py`. It uses a teal geometric flyer, gold-capped teal pillars, slate-blue scenery and a `TINY FLAP` title. A mockup presented as the public starter build should follow that appearance. Project-created procedural themes such as Toast on the Run and Past Due have their own authored appearance. No private art or firmware screenshots were copied into the website during this audit.
+The three supplied Geniuslinks remain active, with the exact verified ASINs and Associates tag. Associates lists `bitty.games`. Each paid link has a nearby **Paid link** label and the required Amazon sentence appears with the kit. The adapter links are manufacturer references, with connector orientation and testing limits stated. They are not newly created affiliate links.
 
-## Published installer preview and blocker
+## Website checks
 
-The public [firmware repository](https://github.com/ryangrams/bitty) now contains source at the audited commit. Its [releases API](https://api.github.com/repos/ryangrams/bitty/releases) still returns an empty array.
+Run `npm run build` and `npm run check`. The checks cover anchors, static assets, image dimensions and alt text, the complete configured game list, one canonical loader destination, preview status, rights wording, affiliate links, disclosure and prose. The deployed payload stays below 850 KB, including the social-preview JPEG and font licenses. There is no client-side JavaScript, data collection, form or database.
 
-The [GitHub Pages interface preview](https://ryangrams.github.io/bitty/) returns HTTP 200 and loads its application module. Its [release status file](https://ryangrams.github.io/bitty/release.json) returns `{"available": false, "version": "preview-f83f0cda"}`. The candidate manifest path `https://ryangrams.github.io/bitty/manifest.json` returns HTTP 404. The preview deliberately provides no installable firmware image.
-
-The [firmware release status](https://github.com/ryangrams/bitty/blob/main/docs/RELEASE_STATUS.md) says the first complete hardware installation and transfer check is pending. Its acceptance list includes a verified recovery backup, partition migration, fresh installation, runtime upload, interrupted transfer, removal, replacement, restart, boot selection and controller reconnection. The previous private game build remains the device's last installed release.
-
-The **Load your device** link can lead to this preview with a nearby explanation that installation is still being verified. Keep installation readiness false. Do not say a downloadable USB release is available or call the installation handoff complete.
-
-## GitHub Issues
-
-GitHub Issues is enabled on the firmware repository: `has_issues: true`. Its [issue list](https://github.com/ryangrams/bitty/issues) returned HTTP 200 and the issues API returned an empty array. Opening the [new issue URL](https://github.com/ryangrams/bitty/issues/new) without authentication led to GitHub's sign-in page with the correct repository destination preserved.
-
-Use the generic new issue URL for actionable bugs, game requests and port requests. The public source now also contains issue templates under `.github/ISSUE_TEMPLATE/`. Recheck any template-specific link when adopting it. Keep discussion in Discord. Ask for device model, behavior, logs and lawful references. Never request commercial game files.
-
-## Updating the website configuration
-
-Keep installation links, verification state, supported devices, controller modes and game status in the website's editable configuration. The GitHub preview can be linked while its unavailable-installation state is explained. Keep the repository URL as the source and documentation fallback. Record the checked date and firmware evidence commit with each future status update.
-
-Before marking installation available or the handoff complete:
-
-1. Confirm the public source and installation documentation for the specific release. Record its published commit and release tag. Public source is available now; the downloadable release remains pending.
-2. Obtain the installation destination from that project's published documentation. Open it over HTTPS and confirm its actual contents. Check every redirect.
-3. Inspect the published manifest and every referenced artifact. Confirm successful responses, the intended original M5StickC Plus target, correct flash layout, matching release version and recorded artifact hashes. Review the release's distribution checks for imported assets and private files.
-4. Check that browser requirements, data-cable requirements, model selection, firmware replacement and recovery instructions agree with the release. Confirm that downloads require no star or payment.
-5. Have the firmware project verify the published installation path on the original M5StickC Plus, including a working boot and the documented recovery path. Record the tested release and outcome. A local build or passing HTTP response is insufficient evidence for this step.
-6. Check that any game-library flow keeps user files local and explains its actual supported formats and adapters. Keep the rights statement accurate and never describe a checkbox as granting permission.
-7. Update the central configuration with the verified URL, date, release and hardware scope. Rebuild the public website, then follow **Load your device** from the deployed site and repeat the important link checks.
-
-For a new device, record the exact model, chip, flash size, release/build target and physical test scope before adding it to the tested list. For a new controller, record its exact mode as well as the model. For a game, move its status only as far as the implementation and verification evidence supports.
-
-This document covers firmware and installation evidence. Discord destinations, affiliate links, support activation, rights sources and deployment verification need their own current checks.
+Verify phone layouts at 390 by 844 and 320 by 740, including the hero image above the fold, no horizontal overflow and the full hardware table. Test keyboard focus, skip link and native disclosure controls. Recheck HTTPS, redirects, 404 behavior and important links after each deployment. Save publication evidence in ignored `artifacts/`.
