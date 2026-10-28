@@ -1,0 +1,119 @@
+{
+  "site": {
+    "name": "Bitty",
+    "origin": "https://bitty.games",
+    "description": "Tiny games and apps on small hardware. A growing side project by Ryan Grams, born from a questionable summer-camp idea.",
+    "checked": "2026-10-28",
+    "story": "I wanted to build a game device small enough for my kids to sneak into summer camp. We definitely got caught. The project kept growing anyway."
+  },
+  "links": {
+    "firmware": "https://github.com/ryangrams/bitty",
+    "websiteSource": "https://github.com/ryangrams/bitty-website",
+    "issues": "https://github.com/ryangrams/bitty/issues",
+    "newIssue": "https://github.com/ryangrams/bitty/issues/new",
+    "discord": "https://discord.gg/Y9r6MQEsm4",
+    "studio": "https://studioupgrade.com",
+    "sponsors": "https://github.com/sponsors/ryangrams",
+    "coffee": "https://github.com/sponsors/ryangrams?frequency=one-time",
+    "copyright": "https://www.copyright.gov/help/faq/faq-digital.html"
+  },
+  "installation": {
+    "verified": false,
+    "url": null,
+    "status": "Public installer in progress",
+    "note": "The firmware and USB installer are still being prepared for GitHub. A public installation release is not available yet. Check the project before plugging anything in."
+  },
+  "community": {
+    "inviteVerified": true,
+    "discussionChannel": "#general",
+    "channelUrl": "https://discord.com/channels/1525909777568497724/1525909778084266146",
+    "inviteLandingChannel": "rules-and-roles",
+    "verifiedAt": "2026-10-28"
+  },
+  "devices": [
+    {
+      "id": "plus",
+      "name": "Original M5StickC Plus",
+      "model": "K016-P · ESP32-PICO-D4",
+      "status": "Tested device",
+      "state": "tested",
+      "description": "This is the little orange device I’ve tested. It has a 135 × 240 screen, buttons and an onboard motion sensor. M5Stack now lists it as end of life, so check the exact model before hunting one down.",
+      "source": "https://docs.m5stack.com/en/core/StickC-Plus",
+      "purchaseUrl": null,
+      "affiliateVerified": false
+    },
+    {
+      "id": "se",
+      "name": "StickC-Plus SE",
+      "model": "Separate hardware · no onboard IMU",
+      "status": "Support unverified",
+      "state": "planned",
+      "description": "A candidate for button-based games. The SE removes the onboard motion sensor, so tilt controls need a different plan. It needs its own Bitty build and testing.",
+      "source": "https://shop.m5stack.com/products/m5stickc-plus-se-mini-iot-dev-kit-esp32-pico",
+      "purchaseUrl": null,
+      "affiliateVerified": false,
+      "approvedTarget": "https://a.co/d/0aIvGvvB"
+    },
+    {
+      "id": "s3",
+      "name": "M5StickS3",
+      "model": "Separate hardware · ESP32-S3",
+      "status": "Support unverified",
+      "state": "planned",
+      "description": "Another candidate for a future device port. It needs its own firmware and testing. There’s no Bitty release for it yet.",
+      "source": "https://docs.m5stack.com/en/core/StickS3",
+      "purchaseUrl": null,
+      "affiliateVerified": false,
+      "approvedTarget": "https://a.co/d/004XU2s8"
+    }
+  ],
+  "controller": {
+    "name": "IINE Gamebrick Mini",
+    "status": "Tested in H mode",
+    "description": "The controller I’ve tested pairs in H mode with its yellow indicator. Pairing, reconnecting, directions, rotation and running jumps have been checked on the original Plus. Other modes and controllers still need testing.",
+    "purchaseUrl": null,
+    "affiliateVerified": false,
+    "source": null
+  },
+  "games": [
+    {
+      "name": "Arcade experiments",
+      "status": "In development",
+      "description": "Flying through gaps, breaking bricks, dodging shots and strapping on a jetpack. These are local firmware builds. Controls, sound and hardware testing are still moving."
+    },
+    {
+      "name": "Your own game files",
+      "status": "In development",
+      "description": "Cartridge and game-file adapters are being worked on separately. Compatibility varies by file and build. Bring files you’re entitled to use and adapt."
+    },
+    {
+      "name": "Two-device play",
+      "status": "Experimental",
+      "description": "Linked play between two devices is being explored. A complete two-device radio playthrough still needs testing."
+    }
+  ],
+  "concepts": [
+    {
+      "name": "Lights Out",
+      "type": "Flashlight dodging",
+      "image": "/assets/illustrations/lights-out.svg",
+      "alt": "Original concept art: a tiny purple player moves between tents and trees, away from amber flashlight beams.",
+      "description": "The camp is quiet. The flashlight beams are doing laps. Pick your way back to the tent while the cones of light sweep between trees. Getting greedy about one more step is the whole problem.",
+      "controls": "Tilt to creep. Hold the front button to freeze behind cover. A button-only control option would let you step between lanes.",
+      "appeal": "Short rounds, readable shadows and that very specific feeling of getting away with something for a few glorious steps."
+    },
+    {
+      "name": "Patch Panic",
+      "type": "Cable-routing puzzle",
+      "image": "/assets/illustrations/patch-panic.svg",
+      "alt": "Original concept art: violet and amber cables cross a small grid between matching sockets.",
+      "description": "Connect the right ports on a tiny patch panel. Every cable uses precious space. One suspiciously unhelpful lead keeps finding a way into the wrong socket. Yes, I want to make a game about cable management.",
+      "controls": "Tap the side button to pick a tile. Tap the front button to rotate its cable. Hold to test the circuit. A tilt option could move the cursor.",
+      "appeal": "A pocket-size puzzle with a clean little payoff when the whole signal path lights up."
+    }
+  ],
+  "affiliate": {
+    "siteApproved": false,
+    "disclosure": "As an Amazon Associate I earn from qualifying purchases."
+  }
+}

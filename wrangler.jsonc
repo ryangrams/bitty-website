@@ -1,0 +1,17 @@
+{
+  "name": "bitty-website",
+  "account_id": "0a0fd1c15c478d16d882fd284a63dcb4",
+  "compatibility_date": "2026-10-28",
+  "main": "scripts/worker.mjs",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    {"pattern": "bitty.games", "custom_domain": true},
+    {"pattern": "www.bitty.games", "custom_domain": true}
+  ]
+}

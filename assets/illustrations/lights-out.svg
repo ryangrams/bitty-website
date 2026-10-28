@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" role="img" aria-labelledby="lights-title lights-desc" shape-rendering="crispEdges">
+  <title id="lights-title">Lights Out concept</title>
+  <desc id="lights-desc">An original overhead campsite illustration with square trees, tiny tents, a violet player and amber flashlight beams.</desc>
+  <defs>
+    <g id="tree">
+      <rect x="24" y="48" width="8" height="16" fill="#E8A33D" opacity=".3"/>
+      <path d="M16 0h24v8h8v8h8v32h-8v8H8v-8H0V16h8V8h8z" fill="#1A1B22"/>
+      <path d="M16 8h24v8h8v16H8V16h8z" fill="#9B7CFF" opacity=".11"/>
+      <path d="M8 40h40v8H8zM16 32h8v8h-8z" fill="#101116"/>
+      <rect x="16" y="16" width="8" height="8" fill="#9B7CFF" opacity=".18"/>
+    </g>
+    <g id="tent">
+      <path d="M0 40h8V24h8V8h8V0h32v8h8v16h8v16h8v8H0z" fill="#FF6B2C"/>
+      <path d="M24 0h8v8h-8v16h-8v16H8v8H0v-8h8V24h8V8h8z" fill="#E8A33D"/>
+      <path d="M40 16h8v8h8v16h8v8H24v-8h8V24h8z" fill="#101116"/>
+      <rect x="8" y="48" width="8" height="8" fill="#E8A33D" opacity=".45"/>
+      <rect x="64" y="48" width="8" height="8" fill="#E8A33D" opacity=".45"/>
+    </g>
+  </defs>
+  <path fill="#101116" d="M0 0h640v400H0z"/>
+  <path d="M0 0h640v8H0zM0 392h640v8H0z" fill="#1A1B22"/>
+  <path d="M304 0h64v64h-16v48h-16v48h-16v64h16v64h-16v64h-16v48h-64v-64h16v-64h16v-48h-16v-80h16V96h16V48h16z" fill="#1A1B22" opacity=".65"/>
+  <g fill="#9B7CFF" opacity=".12">
+    <path d="M304 48h8v8h-8zM288 112h8v8h-8zM320 152h8v8h-8zM280 208h8v8h-8zM304 280h8v8h-8zM272 344h8v8h-8zM352 88h8v8h-8zM232 248h8v8h-8zM400 344h8v8h-8z"/>
+  </g>
+  <use href="#tree" x="16" y="16"/>
+  <use href="#tree" x="88" y="48"/>
+  <use href="#tree" x="168" y="0"/>
+  <use href="#tree" x="400" y="24"/>
+  <use href="#tree" x="488" y="8"/>
+  <use href="#tree" x="568" y="48"/>
+  <use href="#tree" x="24" y="160"/>
+  <use href="#tree" x="552" y="168"/>
+  <use href="#tree" x="8" y="288"/>
+  <use href="#tree" x="88" y="328"/>
+  <use href="#tree" x="168" y="296"/>
+  <use href="#tree" x="440" y="312"/>
+  <use href="#tree" x="552" y="312"/>
+  <use href="#tent" x="136" y="112"/>
+  <use href="#tent" x="424" y="136"/>
+  <g fill="#E8A33D">
+    <path d="M240 96h8v16h16v16h16v16h16v16h16v16h16v16h16v16h16v16h-16v8h-16v8h-16v8h-16v8h-16v8h-16V248h-8v-32h-8v-32h-8v-32h-8v-32h-8z" opacity=".13"/>
+    <path d="M248 112h8v16h16v16h16v16h16v16h16v16h16v16h16v16h-16v8h-16v8h-16v8h-16v-16h-8v-32h-8v-32h-8v-32h-8z" opacity=".08"/>
+    <path d="M488 264h-16v-8h-24v-8h-24v-8h-24v-8h-24v-8h-24v-8h-24v-8h-16v16h-8v16h-8v16h-8v16h-8v16h40v-8h48v-8h48v-8h48v-8h24z" opacity=".15"/>
+  </g>
+  <g>
+    <path d="M224 80h24v8h8v16h-16v-8h-16z" fill="#E8A33D"/>
+    <path d="M224 80h16v8h-16z" fill="#FF6B2C"/>
+    <rect x="240" y="96" width="8" height="8" fill="#E8A33D"/>
+    <path d="M488 256h24v8h8v16h-24v-8h-8z" fill="#E8A33D"/>
+    <rect x="504" y="264" width="16" height="16" fill="#FF6B2C"/>
+  </g>
+  <g fill="#101116">
+    <path d="M296 244h32v8h8v24h-8v8h-32v-8h-8v-24h8z"/>
+  </g>
+  <g fill="#6D4BF5">
+    <path d="M304 240h16v8h8v24h-32v-24h8z"/>
+    <rect x="296" y="280" width="8" height="8"/>
+    <rect x="320" y="280" width="8" height="8"/>
+  </g>
+  <path d="M304 240h16v8h-16zM296 248h8v8h-8z" fill="#9B7CFF"/>
+  <rect x="312" y="256" width="8" height="8" fill="#E8A33D"/>
+  <g fill="#9B7CFF" opacity=".45">
+    <rect x="280" y="296" width="8" height="8"/>
+    <rect x="272" y="312" width="8" height="8"/>
+    <rect x="264" y="328" width="8" height="8"/>
+  </g>
+  <g fill="#1A1B22">
+    <path d="M32 368h80v8H32zM528 24h80v8h-80z"/>
+  </g>
+  <g fill="#6D4BF5">
+    <path d="M32 368h32v8H32zM584 24h24v8h-24z"/>
+  </g>
+</svg>

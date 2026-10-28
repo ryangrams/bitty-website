@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" role="img" aria-labelledby="patch-title patch-desc" shape-rendering="crispEdges">
+  <title id="patch-title">Patch Panic concept</title>
+  <desc id="patch-desc">An original cable puzzle illustration with a square routing grid, colored connectors and one unruly cable tangle.</desc>
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse" x="96" y="56">
+      <path d="M0 0h48v48H0z" fill="#101116"/>
+      <path d="M0 0h48v1H1v47H0z" fill="#9B7CFF" opacity=".1"/>
+      <path d="M20 20h8v8h-8z" fill="#1A1B22"/>
+    </pattern>
+    <g id="socket">
+      <path d="M8 0h24v8h8v24h-8v8H8v-8H0V8h8z" fill="#1A1B22"/>
+      <path d="M8 8h24v24H8z" fill="currentColor"/>
+      <path d="M16 16h8v8h-8z" fill="#101116"/>
+    </g>
+  </defs>
+  <path fill="#101116" d="M0 0h640v400H0z"/>
+  <path d="M64 24h480v8h16v16h8v304h-8v16h-16v8H64v-8H48v-16h-8V48h8V32h16z" fill="#1A1B22"/>
+  <path d="M72 48h448v304H72z" fill="#101116"/>
+  <path d="M96 56h384v288H96z" fill="url(#grid)"/>
+  <g fill="#9B7CFF" opacity=".28">
+    <path d="M64 48h8v8h-8zM536 48h8v8h-8zM64 344h8v8h-8zM536 344h8v8h-8z"/>
+  </g>
+  <g fill="none" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M120 80h96v96h96V80h144" stroke="#101116" stroke-width="24"/>
+    <path d="M120 80h96v96h96V80h144" stroke="#6D4BF5" stroke-width="16"/>
+    <path d="M120 80h96v96h96V80h144" stroke="#9B7CFF" stroke-width="4"/>
+    <path d="M120 272h48v-48h96v96h144v-48h48" stroke="#101116" stroke-width="24"/>
+    <path d="M120 272h48v-48h96v96h144v-48h48" stroke="#E8A33D" stroke-width="16"/>
+    <path d="M120 272h48v-48h96v96h144v-48h48" stroke="#FF6B2C" stroke-width="4"/>
+    <path d="M120 176h48v-48h96v144h96v-96h96" stroke="#101116" stroke-width="24"/>
+    <path d="M120 176h48v-48h96v144h96v-96h96" stroke="#FF6B2C" stroke-width="16"/>
+  </g>
+  <g>
+    <path d="M256 212h16v24h-16zM256 260h16v24h-16z" fill="#FF6B2C"/>
+    <path d="M256 212h16v4h-16zM256 232h16v4h-16z" fill="#101116"/>
+    <path d="M300 168h24v16h-24z" fill="#6D4BF5"/>
+    <path d="M300 168h4v16h-4zM320 168h4v16h-4z" fill="#101116"/>
+  </g>
+  <use href="#socket" x="100" y="60" color="#9B7CFF"/>
+  <use href="#socket" x="436" y="60" color="#9B7CFF"/>
+  <use href="#socket" x="100" y="252" color="#E8A33D"/>
+  <use href="#socket" x="436" y="252" color="#E8A33D"/>
+  <use href="#socket" x="100" y="156" color="#FF6B2C"/>
+  <use href="#socket" x="436" y="156" color="#FF6B2C"/>
+  <g fill="#1A1B22">
+    <path d="M332 116h56v8h8v56h-8v8h-56v-8h-8v-56h8z"/>
+    <path d="M188 260h40v8h8v24h-8v8h-40v-8h-8v-24h8z"/>
+  </g>
+  <g fill="#9B7CFF" opacity=".35">
+    <path d="M340 124h40v8h-40zM332 132h8v24h-8zM188 268h8v16h-8z"/>
+  </g>
+  <g fill="none" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M540 144h32v40h-40v-72h56v104h-72v-56h88v80h-48v-40h64v88" stroke="#101116" stroke-width="20"/>
+    <path d="M540 144h32v40h-40v-72h56v104h-72v-56h88v80h-48v-40h64v88" stroke="#6D4BF5" stroke-width="12"/>
+    <path d="M540 144h32v40h-40v-72h56v104h-72v-56h88v80h-48v-40h64v88" stroke="#9B7CFF" stroke-width="4"/>
+  </g>
+  <path d="M608 280h24v24h-8v8h-8v-8h-8z" fill="#9B7CFF"/>
+  <path d="M616 304h8v8h-8z" fill="#E8A33D"/>
+  <g fill="#E8A33D">
+    <path d="M592 88h8v16h-8zM608 104h16v8h-16zM568 80h8v8h-8z"/>
+  </g>
+  <path d="M72 32h64v8H72zM144 32h16v8h-16zM168 32h16v8h-16zM464 360h64v8h-64z" fill="#6D4BF5"/>
+  <path d="M464 360h24v8h-24z" fill="#9B7CFF"/>
+</svg>
