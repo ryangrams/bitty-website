@@ -57,7 +57,7 @@ The existing authenticated Geniuslink account and its existing API credentials w
 | [geni.us/SUm5sticks3](https://geni.us/SUm5sticks3) | [B0GWHN8HK3](https://www.amazon.com/dp/B0GWHN8HK3) | M5StickS3. Compatibility status must follow the firmware project. |
 | [geni.us/SUiinegamebrick](https://geni.us/SUiinegamebrick) | [B0FLK6TP38](https://www.amazon.com/dp/B0FLK6TP38) | IINE Mini Controller, Grey, the exact purchased product. |
 
-All three public links resolved successfully with HTTP 200 to their listed ASIN and appended the existing Amazon Associates tag `ryangrams-20`. Geniuslink's `GET /v1/affiliate/stats` reports **Amazon (US)** among the account's enrolled programs. This verifies the configured affiliate destinations. The separate Associates website-list check below remains open.
+All three public links resolved successfully with HTTP 200 to their listed ASIN and appended the existing Amazon Associates tag `ryangrams-20`. Geniuslink's `GET /v1/affiliate/stats` reports **Amazon (US)** among the account's enrolled programs. This verifies the configured affiliate destinations. The account-action record below describes the separate Associates website list.
 
 A narrow read-only receipt search identified the purchased controller's exact ASIN and Grey variant. The public Amazon product page independently matches that identity. Private receipt contents and personal details are excluded from this repository.
 
@@ -77,11 +77,11 @@ Include this exact statement clearly and conspicuously on the site:
 
 [Amazon's current program policies](https://affiliate-program.amazon.com/help/operating/policies) require accurate website information in the Associates application. Keep purchase claims, prices, and affiliate attribution within what has actually been verified.
 
-### Remaining owner step: Associates website list
+### Owner publication choice and Associates website list
 
-The current browser's Amazon session displayed a notice that its email or mobile number is not connected to an Associates account. The Associates website list could not be inspected or changed in that session. This does not establish the status of Ryan's separate Associates account associated with `ryangrams-20`.
+The Codex browser reached the existing Associates account associated with `ryangrams-20`. Its list contained Ryan’s site, YouTube, Geniuslink and Facebook. An addition of `https://bitty.games` reached the final declaration but was discarded after Ryan directed that the list remain unchanged. No addition or declaration was submitted.
 
-Ryan needs to sign into the existing Associates account that owns that tag, confirm or add `https://bitty.games` in its website list, and preserve all existing entries. No replacement account or new terms acceptance was performed. A working Geniuslink redirect does not verify that the website is listed in Associates.
+Ryan authorized publishing the three supplied Geniuslinks with the disclosures above. `affiliate.publishPaidLinks` records that publication choice. It does not claim that Bitty is listed or approved in Associates. Geniuslink destination verification and Amazon’s website-list requirements remain separate facts.
 
 ## GitHub Sponsors
 

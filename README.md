@@ -61,11 +61,11 @@ After the separate firmware work is published, follow [the activation criteria](
 
 The original M5StickC Plus is the tested device. SE, Plus2, original StickC and S3 devices have separate hardware and need their own verified builds. A separate StickS3 build now compiles, with physical checks still pending. The SE has no onboard IMU. The IINE Gamebrick Mini is tested in H mode only. Status changes need evidence from the firmware project.
 
-Purchase buttons require a verified Geniuslink destination and an approved affiliate site setting in `content/site.json`. Put “Paid link” beside each enabled purchase button. Preserve the disclosure beside the hardware section:
+Purchase buttons require a verified Geniuslink destination and the owner’s `affiliate.publishPaidLinks` setting in `content/site.json`. This setting records permission to publish the supplied links. It does not represent Amazon approval. Put “Paid link” beside each enabled purchase button. Preserve the disclosure beside the hardware section:
 
 > As an Amazon Associate I earn from qualifying purchases.
 
-The owner should confirm `bitty.games` is listed in Amazon Associates’ websites. See [rights and link evidence](docs/RIGHTS-AND-LINKS.md) for current primary sources. Do not add product prices or broader compatibility claims without checking them.
+Ryan authorized publishing the three supplied Geniuslinks and directed that the existing Associates website list stay unchanged. See [rights and link evidence](docs/RIGHTS-AND-LINKS.md) for the account-action record and current primary sources. Do not add product prices or broader compatibility claims without checking them.
 
 GitHub Sponsors is already active, including one-time coffee support. No separate Buy Me a Coffee account or Sponsors activation is needed. Downloads and participation stay independent of stars and payment.
 

@@ -31,7 +31,7 @@ if (config.installation.verified) {
   assert(html.includes('Installation is not available yet.'));
 }
 for (const item of [...config.devices, config.controller]) {
-  if (item.purchaseUrl && item.affiliateVerified && config.affiliate.siteApproved) {
+  if (item.purchaseUrl && item.affiliateVerified && config.affiliate.publishPaidLinks) {
     assert(html.includes(item.purchaseUrl.replaceAll('&', '&amp;')));
     assert(html.includes('Paid link'));
   }

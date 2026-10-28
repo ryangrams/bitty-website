@@ -137,7 +137,7 @@
     }
   ],
   "affiliate": {
-    "siteApproved": false,
-    "disclosure": "As an Amazon Associate I earn from qualifying purchases."
+    "disclosure": "As an Amazon Associate I earn from qualifying purchases.",
+    "publishPaidLinks": true
   }
 }
