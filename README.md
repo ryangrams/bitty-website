@@ -15,7 +15,7 @@ npm run check
 
 Edit `content/site.json` for external links, hardware compatibility, controller details, game status, upcoming originals, feature labels, accessories and installation status. Edit `scripts/build.mjs` for page structure and the remaining copy. Edit `style.css` for layout, type and color.
 
-The generated `dist/` directory is ignored by Git. Build it again with `npm run build`. Each build replaces only that directory. The generated `dist/` was removed after the verified deployment to keep the checkout lean. Restore it with `npm run build`.
+The generated `dist/` directory is ignored by Git. Build it again with `npm run build`. Each build replaces only that directory. The generated `dist/` was removed after the verified deployment to keep the checkout lean. Restore it with `npm run build`. The disposable `.wrangler/` deployment cache was also removed after publication. Wrangler recreates it during the next deploy.
 
 ## Preview
 
