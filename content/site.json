@@ -50,8 +50,8 @@
       "state": "planned",
       "description": "A candidate for button-based games. The SE removes the onboard motion sensor, so tilt controls need a different plan. It needs its own Bitty build and testing.",
       "source": "https://shop.m5stack.com/products/m5stickc-plus-se-mini-iot-dev-kit-esp32-pico",
-      "purchaseUrl": null,
-      "affiliateVerified": false,
+      "purchaseUrl": "https://geni.us/SUm5stickplusse",
+      "affiliateVerified": true,
       "approvedTarget": "https://a.co/d/0aIvGvvB"
     },
     {
@@ -62,18 +62,19 @@
       "state": "planned",
       "description": "Another candidate for a future device port. It needs its own firmware and testing. There’s no Bitty release for it yet.",
       "source": "https://docs.m5stack.com/en/core/StickS3",
-      "purchaseUrl": null,
-      "affiliateVerified": false,
+      "purchaseUrl": "https://geni.us/SUm5sticks3",
+      "affiliateVerified": true,
       "approvedTarget": "https://a.co/d/004XU2s8"
     }
   ],
   "controller": {
-    "name": "IINE Gamebrick Mini",
+    "name": "IINE Gamebrick Mini (Grey)",
     "status": "Tested in H mode",
     "description": "The controller I’ve tested pairs in H mode with its yellow indicator. Pairing, reconnecting, directions, rotation and running jumps have been checked on the original Plus. Other modes and controllers still need testing.",
-    "purchaseUrl": null,
-    "affiliateVerified": false,
-    "source": null
+    "purchaseUrl": "https://geni.us/SUiinegamebrick",
+    "affiliateVerified": true,
+    "source": "https://www.amazon.com/dp/B0FLK6TP38",
+    "asin": "B0FLK6TP38"
   },
   "games": [
     {

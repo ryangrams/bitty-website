@@ -43,9 +43,25 @@ Both user-supplied short links resolved successfully. The destinations differ fr
 
 [M5Stack's official Plus SE product page](https://shop.m5stack.com/products/m5stickc-plus-se-mini-iot-dev-kit-esp32-pico) confirms that the SE removes the onboard 6-axis IMU.
 
-Neither supplied URL leads to a game controller. The observed redirects contain Amazon sharing parameters and **no visible `tag` parameter**. That inspection does not verify Associates commission attribution. Preserve the supplied URLs as research evidence, and verify approved affiliate destinations before presenting them as purchase recommendations.
+Neither supplied URL leads to a game controller. The observed redirects contain Amazon sharing parameters and **no visible `tag` parameter**. That inspection did not verify Associates commission attribution. Ryan subsequently authorized creating affiliate links in his existing Geniuslink account for both supplied devices and the controller he purchased.
 
 The existing affiliate exports at `~/SUDev/affiliate-tools/links.csv` and `links.md` contained no matching M5Stack, M5Stick, 8BitDo, gamepad, game-controller, Joy-Con, or Bitty entry when checked. A controller's compatibility must also come from the firmware project before the website recommends it.
+
+## Created Geniuslink destinations
+
+The existing authenticated Geniuslink account and its existing API credentials were used. No new account or credentials were created. A fresh account search found no links for the three exact Amazon ASINs before creation. The documented `POST /v3/shorturls` endpoint created Simple links in the existing default group. [Geniuslink's live API specification](https://api.geni.us/openapi) documents this endpoint and the account's affiliate-program status endpoint.
+
+| Public affiliate link | Exact Amazon destination | Product identity |
+| --- | --- | --- |
+| [geni.us/SUm5stickplusse](https://geni.us/SUm5stickplusse) | [B0HCYBPKJT](https://www.amazon.com/dp/B0HCYBPKJT) | M5StickC Plus SE. Separate from the tested original Plus and without an onboard IMU. |
+| [geni.us/SUm5sticks3](https://geni.us/SUm5sticks3) | [B0GWHN8HK3](https://www.amazon.com/dp/B0GWHN8HK3) | M5StickS3. Compatibility status must follow the firmware project. |
+| [geni.us/SUiinegamebrick](https://geni.us/SUiinegamebrick) | [B0FLK6TP38](https://www.amazon.com/dp/B0FLK6TP38) | IINE Mini Controller, Grey, the exact purchased product. |
+
+All three public links resolved successfully with HTTP 200 to their listed ASIN and appended the existing Amazon Associates tag `ryangrams-20`. Geniuslink's `GET /v1/affiliate/stats` reports **Amazon (US)** among the account's enrolled programs. This verifies the configured affiliate destinations. The separate Associates website-list check below remains open.
+
+A narrow read-only receipt search identified the purchased controller's exact ASIN and Grey variant. The public Amazon product page independently matches that identity. Private receipt contents and personal details are excluded from this repository.
+
+The firmware's `docs/CONTROLLERS.md` identifies the **IINE Gamebrick Mini** and physically tested H-mode keyboard profile, shown by its yellow light. Use the firmware's current testing limits. The [official IINE guide for L1161 and L1162](https://iine.store/pages/gamebrick-mini-retro-controller-guide-manual) supplies its mode and pairing instructions. A retailer's broad compatibility list does not establish Bitty support.
 
 ## Amazon disclosures
 
@@ -59,7 +75,13 @@ Include this exact statement clearly and conspicuously on the site:
 
 [Amazon's disclosure guidance](https://affiliate-program.amazon.com/help/node/topic/GHQNZAU6669EZS98) requires clear, conspicuous disclosure near links plus the Associates identification statement. [FTC affiliate guidance](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking) explains that readers may not understand the payment relationship from the words “affiliate link” alone.
 
-[Amazon's current program policies](https://affiliate-program.amazon.com/help/operating/policies) require accurate website information in the Associates application. Ryan should confirm that `bitty.games` is included in his Associates website list and supply approved destinations for the exact supported device and any verified controllers. Keep purchase claims, prices, and affiliate attribution within what has actually been verified.
+[Amazon's current program policies](https://affiliate-program.amazon.com/help/operating/policies) require accurate website information in the Associates application. Keep purchase claims, prices, and affiliate attribution within what has actually been verified.
+
+### Remaining owner step: Associates website list
+
+The current browser's Amazon session displayed a notice that its email or mobile number is not connected to an Associates account. The Associates website list could not be inspected or changed in that session. This does not establish the status of Ryan's separate Associates account associated with `ryangrams-20`.
+
+Ryan needs to sign into the existing Associates account that owns that tag, confirm or add `https://bitty.games` in its website list, and preserve all existing entries. No replacement account or new terms acceptance was performed. A working Geniuslink redirect does not verify that the website is listed in Associates.
 
 ## GitHub Sponsors
 
