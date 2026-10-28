@@ -64,3 +64,15 @@ The three supplied Geniuslinks remain active, with the exact verified ASINs and 
 Run `npm run build` and `npm run check`. The checks cover anchors, static assets, image dimensions and alt text, the complete configured game list, one canonical loader destination, preview status, rights wording, affiliate links, disclosure and prose. The deployed payload stays below 850 KB, including the social-preview JPEG and font licenses. There is no client-side JavaScript, data collection, form or database.
 
 Verify phone layouts at 390 by 844 and 320 by 740, including the hero image above the fold, no horizontal overflow and the full hardware table. Test keyboard focus, skip link and native disclosure controls. Recheck HTTPS, redirects, 404 behavior and important links after each deployment. Save publication evidence in ignored `artifacts/`.
+
+### Published revision receipt
+
+Website source `f9ff8f3` was deployed on October 28, 2026 as Cloudflare Worker version `6ead8e24-498d-48c0-b6bd-f0907cb9308e`. HTTPS returned 200 from the Mac Studio and TrashMac. The published HTML, versioned CSS, hero WebP and Hockey Queen WebP matched the local build byte for byte. HTTP and `www` returned 301 redirects, preserving the test query. The missing-page check returned 404. CSP, HSTS and the other configured security headers were present, with no `Set-Cookie` header.
+
+All 25 important configured destinations passed HTTP checks after the two creator guides and clock guide were published. The three Geniuslinks reached the intended ASINs with `ryangrams-20`. The unavailable Delock references were excluded. New source guides were read and their exact public GitHub pages returned 200.
+
+The live browser displayed seven game entries and three Load Bitty links, all pointing to the canonical loader. At 390 by 844, the hero image ran from y=295 to y=528. At 320 by 740, its bottom was y=546. Neither layout had horizontal page overflow, and the hardware table fit the phone width. Original Hockey Queen art loaded correctly. The skip link focused `main`. Native disclosure controls opened with Enter and showed a 3-pixel amber keyboard outline.
+
+Following Load Bitty from the published website reached the actual GitHub Pages interface. Its **Hardware verification pending** button was disabled. Installation remains unverified. The new source clocks and authoring documentation do not change that status. The live website remains open as the task’s browser deliverable.
+
+Screenshots and HTTP evidence are in ignored `artifacts/`, including `bitty-published-v3-mobile.png`, `bitty-published-v3-desktop.png`, `published-v3.html` and `link-audit.json`. The static build is approximately 709 KiB including the social image and license files. Browser layout overrides were reset after checks.
