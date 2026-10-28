@@ -79,9 +79,9 @@ Include this exact statement clearly and conspicuously on the site:
 
 ### Owner publication choice and Associates website list
 
-The Codex browser reached the existing Associates account associated with `ryangrams-20`. Its list contained Ryan’s site, YouTube, Geniuslink and Facebook. An addition of `https://bitty.games` reached the final declaration but was discarded after Ryan directed that the list remain unchanged. No addition or declaration was submitted.
+On October 28, 2026, Ryan requested adding `https://bitty.games` to the existing Associates account associated with `ryangrams-20`. The Codex browser submitted the addition and Amazon confirmed “Websites and Mobile Apps updated.” The saved list includes Bitty alongside Ryan’s site, YouTube, Geniuslink and Facebook. All four previous entries remain. The child-audience declaration used Ryan’s explicit confirmation that these sites are not directed primarily at children under 13.
 
-Ryan authorized publishing the three supplied Geniuslinks with the disclosures above. `affiliate.publishPaidLinks` records that publication choice. It does not claim that Bitty is listed or approved in Associates. Geniuslink destination verification and Amazon’s website-list requirements remain separate facts.
+Ryan authorized publishing the three supplied Geniuslinks with the disclosures above. `affiliate.publishPaidLinks` records that publication choice. Being listed in Associates does not establish product compatibility or grant rights to game files.
 
 ## GitHub Sponsors
 

@@ -65,7 +65,7 @@ Purchase buttons require a verified Geniuslink destination and the owner’s `af
 
 > As an Amazon Associate I earn from qualifying purchases.
 
-Ryan authorized publishing the three supplied Geniuslinks and directed that the existing Associates website list stay unchanged. See [rights and link evidence](docs/RIGHTS-AND-LINKS.md) for the account-action record and current primary sources. Do not add product prices or broader compatibility claims without checking them.
+Ryan authorized publishing the three supplied Geniuslinks. The existing Associates account now lists `bitty.games` alongside its four previous entries. See [rights and link evidence](docs/RIGHTS-AND-LINKS.md) for the account-action record and current primary sources. Do not add product prices or broader compatibility claims without checking them.
 
 GitHub Sponsors is already active, including one-time coffee support. No separate Buy Me a Coffee account or Sponsors activation is needed. Downloads and participation stay independent of stars and payment.
 
